@@ -33,4 +33,4 @@
 1) Only complete up to Todo 10
 
 ## Portfolio Page
-1) Only complete up to Todo 6
+1) Only complete up to Todo 5
