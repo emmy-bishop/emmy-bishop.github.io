@@ -20,12 +20,20 @@
  */
 
 function reverseString(input) {
-    // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE GOES ABOVE HERE //
+  // YOUR CODE GOES BELOW HERE //
+  
+  // create var to hold output
+var backwardsString = '';
+// use for loop to loop through input string in reverse
+for (var i = input.length - 1; i >= 0; i--) {
+  // add each character to created var
+  backwardsString += input[i];
+// return created var
+} return backwardsString;
+
+  
+  
+  // YOUR CODE GOES ABOVE HERE //
 }
 
 
