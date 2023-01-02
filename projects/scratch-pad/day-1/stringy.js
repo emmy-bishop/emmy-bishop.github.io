@@ -137,7 +137,8 @@ if (lastChar === char.toUpperCase() || lastChar === char.toLowerCase()) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+// return input strings concatenated into one string
+return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -155,7 +156,8 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+    // return strings joined together
+return args.join('');
 
     // YOUR CODE ABOVE HERE //
 }
@@ -172,7 +174,14 @@ function join(stringOne, stringTwo) {
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+// compare length of input strings
+  if (stringOne.length > stringTwo.length) {
+    // if stringOne is longer, return stringOne
+    return stringOne;
+    // else return stringTwo
+  } else {
+    return stringTwo;
+  }
 
     // YOUR CODE ABOVE HERE //
 }
