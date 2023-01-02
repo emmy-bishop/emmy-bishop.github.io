@@ -196,7 +196,18 @@ function longest(stringOne, stringTwo) {
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+// check if 1st string is higher in alph. order than 2nd string
+if (stringOne < stringTwo) {
+    // if so return 1
+    return 1;
+    // check if 2nd string is higher in alph. order than 1st string
+  } else if (stringOne > stringTwo) {
+    // if so return -1
+    return -1;
+    // else return 0
+  } else {
+    return 0;
+  }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -212,7 +223,18 @@ function sortAscending(stringOne, stringTwo) {
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+// check if 1st string is lower in alph. order
+if (stringOne > stringTwo) {
+    // if so return 1
+    return 1;
+    // check if 2nd string is lower in alph. order
+} else if (stringTwo > stringOne) {
+    // if so return -1
+    return -1;
+    // else return 0
+} else {
+    return 0;
+}
 
 
     // YOUR CODE ABOVE HERE //
