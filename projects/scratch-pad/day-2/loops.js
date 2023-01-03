@@ -133,7 +133,20 @@ function getObjectLength(object) {
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
   
+  // create storage array to hold input object's values
+    var storage = [];
   
+    // loop through input object
+    for (var key in object) {
+      // push each value to storage array
+      storage.push(object[key]);
+    }
+  
+    // loop through storage array in reverse
+    for (var i = storage.length - 1; i >= 0; i--) {
+      // console log each value
+      console.log(storage[i]);
+    }
   
   
   // YOUR CODE ABOVE HERE //
