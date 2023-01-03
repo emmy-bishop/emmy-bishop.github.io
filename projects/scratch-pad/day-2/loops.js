@@ -13,7 +13,11 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   
-  
+  // loop forward over array
+  for (var i = 0; i < array.length; i++) {
+    // console log each value from array
+    console.log(array[i]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -26,7 +30,11 @@ function printArrayValues(array) {
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
   
-  
+  // loop backwards over array
+  for (var i = array.length - 1; i >= 0; i--) {
+    // console log each value from array
+    console.log(array[i]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -38,7 +46,13 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  // create array to hold object keys
+  var storage = [];
+  // loop through object
+  for (var key in object) {
+    // push each value to storage array
+    storage.push(key);
+  } return storage;
   
   
   // YOUR CODE ABOVE HERE //
@@ -51,7 +65,11 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  // loop through object
+  for (var key in object) {
+    // console log each key
+    console.log(key);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -63,7 +81,12 @@ function printObjectKeys(object) {
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  // create array to hold object's values
+  var storage = [];
+  // loop through array to get values
+  for (var key in object) {
+    storage.push(object[key]);
+  } return storage;
   
   
   // YOUR CODE ABOVE HERE //
@@ -76,7 +99,11 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  // loop over object
+  for (var key in object) {
+    // console log each value
+    console.log(object[key]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -84,11 +111,16 @@ function printObjectValues(object) {
 
 /** 
  * Given an input Object, return the number of key/value pairs stored within that Object.
+ * 
+ * I: An object
+ * O: # of key/value pairs within input object
+ * 
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
-  
+  // return # of key/value pairs w/in object
+  return Object.keys(object).length;
   
   
   // YOUR CODE ABOVE HERE //
