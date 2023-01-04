@@ -24,7 +24,17 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
-    
+    var container = []; // create array to hold output
+    if (start < end) { // check if starting num is less than ending num
+    for (var i = start; i <= end; i++) { // if so, loop through range of nums
+      container.push(i); // and push each num into container array
+    } return container; // return container chock full of nums
+    } else if (start > end) { // check if starting num is greater than ending num
+      for (var i = start; i >= end; i--) { // if so loop through range in reverse
+        container.push(i); // and push each num into container array
+      } return container; // return container
+    }
+      
     
     
     // YOUR CODE GOES ABOVE HERE //
