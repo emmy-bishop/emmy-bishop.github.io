@@ -14,7 +14,13 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+    return function isItGreaterThan(val) {
+        if (val > base) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -28,7 +34,13 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+    return function isItLessThan(val) {
+        if (val < base) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -42,7 +54,13 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+    return function doesIt(string) {
+        if (string[0].toLowerCase() === startsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -56,7 +74,13 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+    return function doesIt(string) {
+        if (string[string.length - 1].toLowerCase() === endsWith.toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -72,7 +96,10 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    
+    var container = [];
+    for (var i = 0; i < strings.length; i++) {
+        container.push(modify(strings[i]));
+    } return container;
     
     
     // YOUR CODE ABOVE HERE //
@@ -89,8 +116,17 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
+    var container = [];
+    for (var i = 0; i < strings.length; i++) {
+        if  (test(strings[i]) === false) {
+            container.push(strings[i]);
+       } 
+    } 
+    if (container.length > 0) {
+        return false;
+    } else {
+        return true;
+    }
     
     
     // YOUR CODE ABOVE HERE //
