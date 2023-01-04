@@ -14,10 +14,10 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    return function isItGreaterThan(val) {
-        if (val > base) {
-            return true;
-        } else {
+    return function isItGreaterThan(val) { // establish function to be returned
+        if (val > base) { // check if val is greater than base
+            return true; // if so return true
+        } else { // else return false
             return false;
         }
     }
@@ -34,10 +34,10 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    return function isItLessThan(val) {
-        if (val < base) {
-            return true;
-        } else {
+    return function isItLessThan(val) { // establish function to be returned
+        if (val < base) { // check if val is less than base
+            return true; // if so return true
+        } else { // else return false
             return false;
         }
     }
@@ -54,10 +54,10 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    return function doesIt(string) {
-        if (string[0].toLowerCase() === startsWith.toLowerCase()) {
-            return true;
-        } else {
+    return function doesIt(string) { // establish function to be returned
+        if (string[0].toLowerCase() === startsWith.toLowerCase()) { // check if 1st letter of string starts with given char
+            return true; // if so return true
+        } else { // else return false
             return false;
         }
     }
@@ -74,10 +74,10 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    return function doesIt(string) {
-        if (string[string.length - 1].toLowerCase() === endsWith.toLowerCase()) {
-            return true;
-        } else {
+    return function doesIt(string) { // establish function to be returned
+        if (string[string.length - 1].toLowerCase() === endsWith.toLowerCase()) { // check if last char of string matches input char
+            return true; // if so return true
+        } else { // else return false
             return false;
         }
     }
@@ -96,10 +96,10 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    var container = [];
-    for (var i = 0; i < strings.length; i++) {
-        container.push(modify(strings[i]));
-    } return container;
+    var container = []; // create container to hold strings
+    for (var i = 0; i < strings.length; i++) { // loop through strings
+        container.push(modify(strings[i])); // pass strings thru modify function and push into container
+    } return container; // return modified strings
     
     
     // YOUR CODE ABOVE HERE //
@@ -116,16 +116,16 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    var container = [];
-    for (var i = 0; i < strings.length; i++) {
-        if  (test(strings[i]) === false) {
-            container.push(strings[i]);
+    var container = []; // create container to hold test result
+    for (var i = 0; i < strings.length; i++) { // loop thru strings
+        if  (test(strings[i]) === false) { // check if each string passes test
+            container.push(strings[i]); // if so push into container
        } 
     } 
-    if (container.length > 0) {
-        return false;
-    } else {
-        return true;
+    if (container.length > 0) { // check if container holds any strings--these will be false
+        return false; // if so return false
+    } else { // if not, container is empty which means all were true
+        return true; // return true
     }
     
     
