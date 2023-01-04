@@ -14,10 +14,10 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    if (Array.isArray(value) === true) {
-        return true;
-    } else {
+
+    if (Array.isArray(value) === true) { // check if value is an array
+        return true; // if so return true
+    } else { // else return false
         return false;
     }
     
@@ -36,15 +36,15 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    if (value === null) {
-        return false;
-    } else if (Array.isArray(value) === true) {
-        return false;
-    } else if (value instanceof Date === true) {
-        return false;
-    } else if (typeof value === 'object') {
-        return true;
-    } else {
+    if (value === null) { // check if value is null
+        return false; // if so return false
+    } else if (Array.isArray(value) === true) { // check if value is an array
+        return false; // if so return false
+    } else if (value instanceof Date === true) { // check if value is a date
+        return false; // if so return false
+    } else if (typeof value === 'object') { // check if value is an object
+        return true; // if so return true
+    } else { // else return false
         return false;
     }
     
@@ -61,7 +61,17 @@ function isObject(value) {
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (Array.isArray(value) === true) { // check if value is an array
+        return true; // if so return true
+    } else if (value instanceof Date === true) { // check if val is a date
+        return false; // if so return false
+    } else if (value === null) { // check if val is null
+        return false; // if so return false
+    } else if (typeof value === 'object') { // check if val is an object
+        return true; // if so return true
+    } else { // else return false
+        return false;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -89,7 +99,25 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (typeof value === 'number') { // check if val is a number
+        return 'number'; // if so return number
+    } else if (typeof value === 'string') { // check if val is a string
+        return 'string'; // if so return string
+    } else if (Array.isArray(value) === true) { // // check if val is an array
+        return 'array'; // if so return array
+    } else if (typeof value === 'undefined') { // check if val is undefined
+        return 'undefined'; // if so return undefined
+    } else if (typeof value === 'boolean') { // check if val is a boolean
+        return 'boolean'; // if so return boolean
+    } else if (value === null) { // // check if val is null
+        return 'null'; // if so return null
+    } else if (typeof value === 'function') { // check if val is a function
+        return 'function'; // if so return function
+    } else if (value instanceof Date === true) { // check if val is a date
+        return 'date'; // if so return date
+    } else if (typeof value === object) { // check if val is an object
+        return 'object'; // if so return object
+    }
     
     
     // YOUR CODE ABOVE HERE //
