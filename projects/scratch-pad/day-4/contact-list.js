@@ -34,11 +34,11 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
-return {
-    id: id,
-    nameFirst: nameFirst,
-    nameLast: nameLast
+function makeContact(id, nameFirst, nameLast) { // create factory function
+return { // return object
+    id: id, // value of id field should equal input id
+    nameFirst: nameFirst, // val of first name field should equal input first name
+    nameLast: nameLast // val of last name field should equal input last name
 };
 } 
 
@@ -47,39 +47,39 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts = [];
+    var contacts = []; // create array to hold contacts
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
         },
-        addContact: function(contact) {
-            contacts.push(contact);
+        addContact: function(contact) { // create function to add input contact to contact list
+            contacts.push(contact); // push input contact to contacts array
         },
-        findContact: function(fullName) {
-            for (var i = 0; i < contacts.length; i++) {
-                if (fullName === contacts[i].nameFirst + ' ' + contacts[i].nameLast) {
-                    return contacts[i];
-                } else {
+        findContact: function(fullName) { // create function to find contact by full name
+            for (var i = 0; i < contacts.length; i++) { // loop through contacts array
+                if (fullName === contacts[i].nameFirst + ' ' + contacts[i].nameLast) { // check if input name equals any existing contacts
+                    return contacts[i]; // if so return contact object
+                } else { // else return undefined
                     return undefined;
                 }
             }
         },
-        removeContact: function(contact) {
-            for (var i = 0; i < contacts.length; i++) {
-                if (contact === contacts[i]) {
-                    contacts.splice(contacts[i], 1);
+        removeContact: function(contact) { // create function to remove input contact
+            for (var i = 0; i < contacts.length; i++) { // loop thru contacts array
+                if (contact === contacts[i]) { // check if input contact equals any existing contacts
+                    contacts.splice(contacts[i], 1); // if so remove contact
                 }
             }
         },
-        printAllContactNames: function printAllContactNames() {
-            var string = '';
-            for (var i = 0; i < contacts.length; i++) {
-                if (i < contacts.length - 1) {
-                    string += contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n'; 
+        printAllContactNames: function printAllContactNames() { // create function to print all contact names
+            var string = ''; // create string to hold contact names
+            for (var i = 0; i < contacts.length; i++) { // loop thru contacts array
+                if (i < contacts.length - 1) { // check if current name is at last index of array
+                    string += contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n'; // if so add name to string followed by line break
                 }
-            } return string + contacts[contacts.length - 1].nameFirst + ' ' + contacts[contacts.length - 1].nameLast;
+            } return string + contacts[contacts.length - 1].nameFirst + ' ' + contacts[contacts.length - 1].nameLast; // return string plus name at end of contacts w/ NO line break
         }
     }
 }
