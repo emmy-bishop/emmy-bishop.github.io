@@ -82,8 +82,18 @@ console.log(animals.length);
 var friends = []; // use array because it will be a simple list of friends, no key/value pairs, easy to iterate thru
 
 function getRandom(array) {
-return array[Math.floor(Math.random() * array.length - 1)]
+var min = 0;
+var max = array.length - 1;
+return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+
+friends.push(animals[getRandom(animals)].name);
+console.log(friends);
+
+animals[0]['friends'] = friends;
+
+console.log(animals);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
