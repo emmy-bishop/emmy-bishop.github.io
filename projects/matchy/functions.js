@@ -53,20 +53,22 @@ function remove(animals, name) {
 //////////////////////////////////////////////////////////////////////
 
 function add(animals, animal) {
-    if (animal.species.length > 0 && animal.name.length > 0) {
-        for (var i = 0; i < animals.length; i++) {
-            if (animals[i].name === animal.name) {
-                return
-            } else {
-                animals.push(animal);
-            }
+var matchExists = false;
+    for (var i = 0; i < animals.length; i++) {
+        if (animals[i].name === animal.name) {
+            matchExists = true;
         }
-    }
+        }
+        if (matchExists === false) {
+            animals.push(animal);
+        }
 }
 
 /**
  * You did it! You're all done with Matchy!
  */
+
+// if (animal.species.length > 0 && animal.name.length > 0) {
 
 
 
