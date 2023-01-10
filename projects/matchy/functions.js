@@ -19,11 +19,10 @@ function search(animals, name) {
     for (var i = 0; i < animals.length; i++) {
       if (animals[i].name === name) {
         return animals[i];
-      } else {
-        return null;
       }
+      }
+      return null;
     }
-  }
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
@@ -54,12 +53,14 @@ function remove(animals, name) {
 //////////////////////////////////////////////////////////////////////
 
 function add(animals, animal) {
-    for (var i = 0; i < animals.length; i++) {
-        if (animal.hasOwnProperty('name') && animal.name.length > 0 
-        && animal.hasOwnProperty('species') && animal.species.length > 0 
-        && animal.name !== animals[i].name) {
-            animals.push(animal);
-        } 
+    if (animal.species.length > 0 && animal.name.length > 0) {
+        for (var i = 0; i < animals.length; i++) {
+            if (animals[i].name === animal.name) {
+                return
+            } else {
+                animals.push(animal);
+            }
+        }
     }
 }
 
