@@ -11,29 +11,29 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var animal = {};
-animal.species = 'zebra';
-animal['name'] = 'Coolguy';
-animal.noises = [];
-console.log(animal);
+var animal = {}; // create animal variable and assign to empty obj
+animal.species = 'zebra'; // add key of species w/ val of zebra
+animal['name'] = 'Coolguy'; // add key of name w/ val of Coolguy
+animal.noises = []; // add key of noises w/ val of empty array
+console.log(animal); // console log animal obj
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var noises = [];
-noises[0] = 'neigh';
-noises.push('whoop');
-noises.unshift('rawr');
-noises[noises.length] = 'woof';
+var noises = []; // create empty noises array
+noises[0] = 'neigh'; // add neigh to noises arr
+noises.push('whoop'); // add whoop to end of noises arr
+noises.unshift('rawr'); // add rawr to beg of noises arr
+noises[noises.length] = 'woof'; // add woof to end of noises arr
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-animal['noises'] = noises;
-animal.noises.push('eeeee');
-console.log(animal);
+animal['noises'] = noises; // add created noises to animal obj's noises key
+animal.noises.push('eeeee'); // push eeeee into animal obj's noises
+console.log(animal); // console log animal obj
 
 
 /* *******************************************************************
@@ -58,22 +58,22 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var animals = [];
-animals.push(animal);
-console.log(animals);
+var animals = []; // create empty animals array
+animals.push(animal); // push animal obj into array
+console.log(animals); // console log array
 
-var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }
+var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] } // create duck obj
 
-animals.push(duck);
-console.log(animals);
+animals.push(duck); // push duck obj into animals array
+console.log(animals); // console log array
 
 var dog = { species: 'dog', name: 'Fido', noises: ['arf', 'woof']}
-var jellyfish = { species: 'jellyfish', name: 'Moon', noises: ['blub', 'aaaaa']}
+var jellyfish = { species: 'jellyfish', name: 'Moon', noises: ['blub', 'aaaaa']} // create dog and jellyfish objs
 
-animals.push(dog, jellyfish);
+animals.push(dog, jellyfish); // push both into animals array
 
 console.log(animals);
-console.log(animals.length);
+console.log(animals.length); // console log animals array and length of animals array
 
 
 //////////////////////////////////////////////////////////////////////
@@ -81,19 +81,19 @@ console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 var friends = []; // use array because it will be a simple list of friends, no key/value pairs, easy to iterate thru
 
-function getRandom(array) {
-var min = 0;
-var max = array.length - 1;
-return Math.floor(Math.random() * (max - min + 1) + min)
+function getRandom(array) { // create getRandom func
+var min = 0; // create min var and set its value to 0
+var max = array.length - 1; // create max var and set its value to last item in array
+return Math.floor(Math.random() * (max - min + 1) + min) // return result of finding random number, making it into an integer, and rounding it down
 }
 
 
-friends.push(animals[getRandom(animals)].name);
-console.log(friends);
+friends.push(animals[getRandom(animals)].name); // push name at random number's index into friends array
+console.log(friends); // console log friends
 
-animals[0]['friends'] = friends;
+animals[0]['friends'] = friends; // add friends key to first item in animals array w/ val of friends array
 
-console.log(animals);
+console.log(animals); // console log animals
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
