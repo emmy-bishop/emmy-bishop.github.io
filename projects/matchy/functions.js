@@ -9,29 +9,59 @@
  * and read every instruction carefully.
  */
 
+// const { animals } = require('./data');
+
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function search(animals, name) {
+    for (var i = 0; i < animals.length; i++) {
+      if (animals[i].name === name) {
+        return animals[i];
+      } else {
+        return null;
+      }
+    }
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function replace(animals, name, replacement) {
+    for (var i = 0; i < animals.length; i++) {
+        if (animals[i].name === name) {
+            animals[i] = replacement;
+        } 
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function remove(animals, name) {
+    for (var i = 0; i < animals.length; i++) {
+        if (animals[i].name === name) {
+            animals.splice(animals[i]);
+        }
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function add(animals, animal) {
+    for (var i = 0; i < animals.length; i++) {
+        if (animal[i].hasOwnProperty('name') && animal[i].name.length > 0 
+        && animal[i].hasOwnProperty('species') && animal[i].species.length > 0 
+        && animal[i].name !== animals[i].name) {
+            animals.push(animal);
+        } 
+    }
+}
 
 /**
  * You did it! You're all done with Matchy!
