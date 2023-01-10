@@ -197,11 +197,11 @@ function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
 // check if 1st string is higher in alph. order than 2nd string
-if (stringOne < stringTwo) {
+if (stringOne > stringTwo) {
     // if so return 1
     return 1;
     // check if 2nd string is higher in alph. order than 1st string
-  } else if (stringOne > stringTwo) {
+  } else if (stringOne < stringTwo) {
     // if so return -1
     return -1;
     // else return 0
@@ -224,11 +224,11 @@ function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
 // check if 1st string is lower in alph. order
-if (stringOne > stringTwo) {
+if (stringOne < stringTwo) {
     // if so return 1
     return 1;
     // check if 2nd string is lower in alph. order
-} else if (stringTwo > stringOne) {
+} else if (stringTwo < stringOne) {
     // if so return -1
     return -1;
     // else return 0
