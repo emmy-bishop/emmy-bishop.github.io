@@ -55,9 +55,10 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    var capitalizedLetter = string[0].toUppercase;
-    var newString = capitalizedLetter + string - string[0];
-    return newString;
+    var firstLetter = string[0].toUpperCase();
+    for (var i = 1; i < string.length; i++) {
+        firstLetter += string[i];
+    } return firstLetter;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -65,8 +66,13 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
-}
+    var splitString = string.split(' ');
+    var array = [];
+    for (var i = 0; i < splitString.length; i++) {
+      array.push(splitString[i][0].toUpperCase() + 
+      splitString[i].slice(1));
+    } return array.join(' ');
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
