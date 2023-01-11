@@ -59,7 +59,9 @@ var matchExists = false; // create variable to keep track of whether a match has
             matchExists = true; // if so change variable to true
         }
         }
-        if (matchExists === false) { // check if variable's value is false meaning no match was found
+        if (matchExists === false &&
+            animal.species.length > 0 &&
+            animal.name.length > 0) { // check if variable's value is false meaning no match was found
             animals.push(animal); // if so push animal obj into animals array
         }
 }
