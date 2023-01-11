@@ -169,7 +169,6 @@ function isFriend(name, object) {
 
 function nonFriends(name, array) {
     var nonMatching = [];
-    var matchExists = false;
     for (var i = 0; i < array.length; i++) {
       if (array[i].name !== name && array[i].friends.includes(name) === false) {
         nonMatching.push(array[i].name);
@@ -212,9 +211,10 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-    var uniqueElements = [];
-    array.forEach
-}
+    var uniqueElements = [...new Set(array)];
+    return uniqueElements;
+} 
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
