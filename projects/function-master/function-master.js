@@ -211,8 +211,9 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-    var uniqueElements = [...new Set(array)];
-    return uniqueElements;
+    return array.filter((el, i) =>
+        array.indexOf(el) === i
+        )
 } 
 
 
