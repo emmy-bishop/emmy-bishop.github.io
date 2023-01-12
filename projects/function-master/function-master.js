@@ -2,51 +2,47 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function objectValues(object) {
-    var valuesArray = [];
-for (var key in object) {
-    valuesArray.push(object[key]);
-}
-return valuesArray;
+function objectValues(object) { // create function that will take in object
+    let valuesArray = []; // create array to hold input obj's values
+    for (let key in object) { // loop thru object
+        valuesArray.push(object[key]); // push values into array
+    } return valuesArray; // return array
 } 
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function keysToString(object) {
-    var array = [];
-    for (var key in object) {
-        array.push(key);
-    }
-    var string = array.join(' ');
-    return string;
-}
+function keysToString(object) { // create function to take in object
+    let holder = Object.keys(object); // create array of object's keys
+    let separated = holder.join(' '); // use join to convert array into string w/ each key separated by space
+    return separated; // return string
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function valuesToString(object) {
-    var array = [];
-    for (var key in object) {
-        if (typeof object[key] === 'string') {
-            array.push(object[key]);
-        } 
-    } var string = array.join(' ');
-    return string;
-}
+function valuesToString(object) { // create function to take in obj
+    let holder = []; // create array to contain obj values
+    for (let key in object) { // loop thru obj
+      if (typeof object[key] === 'string') { // check if value is a string
+        holder.push(object[key]); // if so push into holder array
+      }
+    } let string = holder.join(' '); // join holder array into string separated by spaces
+    return string; // return string
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function arrayOrObject(collection) {
-    if (Array.isArray(collection) === true) {
-        return 'array';
+function arrayOrObject(collection) { // create function which takes in a collection
+    if (Array.isArray(collection) === true) { // check if collection is an array
+        return 'array'; // if so return array
     }
-    else if (typeof collection === 'object') {
-        return 'object';
+    else if (typeof collection === 'object') { // check if collection is an obj
+        return 'object'; // if so return object
     }
 }
 
@@ -54,24 +50,24 @@ function arrayOrObject(collection) {
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function capitalizeWord(string) {
-    var firstLetter = string[0].toUpperCase();
-    for (var i = 1; i < string.length; i++) {
-        firstLetter += string[i];
-    } return firstLetter;
+function capitalizeWord(string) { // create func to take in string
+    let capitalizedString = string[0].toUpperCase(); // create holder w/ value of first letter of string set to all caps
+    for (let i = 1; i < string.length; i++) { // loop thru rest of string (not incl. first letter)
+        capitalizedString += string[i]; // add each letter to string
+    } return capitalizedString; // return string
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function capitalizeAllWords(string) {
-    var splitString = string.split(' ');
-    var array = [];
-    for (var i = 0; i < splitString.length; i++) {
+function capitalizeAllWords(string) { // create func to take in string
+    let splitString = string.split(' '); // split string into array at each space
+    let array = []; // create holder array
+    for (let i = 0; i < splitString.length; i++) { // loop thru split string
       array.push(splitString[i][0].toUpperCase() + 
-      splitString[i].slice(1));
-    } return array.join(' ');
+      splitString[i].slice(1)); // push capitalized 1st letter plus rest of word into array
+    } return array.join(' '); // join array to form string with each word separated by a space. return string
   }
 
 //////////////////////////////////////////////////////////////////////
@@ -208,16 +204,14 @@ function removeProperties(object, array) {
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// function dedup(array) {
-//     let uniques = array;
-//     for (var i = 0; i < array.length; i++) {
-//         for (var j = 0; j < uniques.length; j++) {
-//             if (i === j) {
-//                 uniques.push(i);
-//             }
-//         }
-//     }
-// } 
+function dedup(array) {
+    let uniques = [];
+    for (var i = 0; i < array.length; i++) {
+        if (!uniques.includes(array[i])) {
+            uniques.push(array[i]);
+        }
+    } return uniques;
+} 
 
 
 //////////////////////////////////////////////////////////////////////
