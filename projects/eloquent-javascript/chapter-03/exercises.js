@@ -17,11 +17,11 @@ function min(num1, num2) { // create function to compare two numbers
 ////////////////////////////////////////////////////////////////////////////////
 
 function isEven(num) { // create function that takes in a number
-  if (num % 2 === 0) { // check if number is even
+  if (num === 0) { // check if num is already 0 or if result of num % 2 equals 0 (meaning num is even)
     return true; // if so return true
-  } else { // otherwise return false
-    return false;
-  }
+  } else if (num === 1 || num === -1) { // check if num is already 1 or -1 or if result of num % 2 equals 1/-1 (meaning num is odd)
+    return false; // if so return false
+  } return isEven(num % 2); // find result of num % 2
 }
 
 ////////////////////////////////////////////////////////////////////////////////
