@@ -28,16 +28,30 @@ function isEven(num) { // create function that takes in a number
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(string, x) { // create function that takes in a string and a char
+  let count = 0; // establish counter to hold instances of char
+  let holder = string.split(''); // split string into array where each letter is one element
+  for (let i = 0; i < holder.length; i++) { // loop thru array
+    if (holder[i] === x) { // check if each letter equals input char
+      count++; // if so increment count
+    }
+  }
+  return count; // return count
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+  let count = 0; // establish count to keep track of # of Bs
+  let holder = string.split(""); // split string into array where each letter is an element
+  for (let i = 0; i < holder.length; i++) { // loop thru array
+    if (holder[i] === 'B') { // if letter is uppercase B, increment count
+      count++;
+    }
+  } 
+  return count; // return count
 }
 
 ////////////////////////////////////////////////////////////////////////////////
