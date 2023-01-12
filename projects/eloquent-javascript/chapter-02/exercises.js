@@ -32,8 +32,21 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
-
+function drawChessboard(rows) {
+  var evenLines = 0;
+  var oddLines = 1;
+      for (var j = 0; j < rows; j++) {
+        if (evenLines % 2 !== 0) {
+          evenLines++;
+        } else {
+          oddLines++;
+        }
+      if ((oddLines + evenLines) % 2 !== 0) {
+        console.log('# # # # \n');
+      } else if ((oddLines + evenLines) % 2 === 0) {
+        console.log(' # # # # \n');
+  }
+ }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
