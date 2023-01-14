@@ -45,9 +45,17 @@ let goo = 'slime';
 
 // 3. const
 // Variables created using const cannot be re-declared after initialization
+// Therefore, const should only be used when declaring a variable that should remain static
 const toastDoneness = 'burnt'; // initializes variable
 console.log(toastDoneness) // prints => burnt
 toastDoneness = 'a perfect golden-brown'; // prints => TypeError: Assignment to constant variable
+// Much like variables created with let, variables created with const are scoped to the code block in which they are declared
+if (toastDoneness === 'a perfect golden-brown') {
+    const feelingsAboutToast = 'positive';
+} else {
+    const feelingsAboutToast = 'negative';
+}
+console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast is not defined at Object
 
 
 // need at least 3 string methods
