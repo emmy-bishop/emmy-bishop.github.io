@@ -6,7 +6,7 @@
  * Variables make it easy to access and even manipulate our stored data at any point.
  * 
  * 1: Declaration and Assignment: To create a new variable, we start off with a keyword followed by the name of our variable.
- * This name must be unique.
+ * This name must be unique. If we wish to assign a value to a variable, we can use an = sign followed by the value.
  * 
  * 2: Var, Let, and Const: Var, let, and const are different declarative keywords and they do different things.
  */
@@ -44,7 +44,8 @@ console.log(goo); // prints => Cannot access 'goo' before initialization
 let goo = 'slime';
 
 // 3. const
-// Variables created using const cannot be re-declared after initialization
+// Variables created using const behave in much the same way as variables created using let
+// However, variables created using const cannot be re-declared after initialization
 // Therefore, const should only be used when declaring a variable that should remain static
 const toastDoneness = 'burnt'; // initializes variable
 console.log(toastDoneness) // prints => burnt
@@ -56,6 +57,46 @@ if (toastDoneness === 'a perfect golden-brown') {
     const feelingsAboutToast = 'negative';
 }
 console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast is not defined at Object
+
+
+/**
+ * DATA TYPES:
+ * 
+ * 0: In JavaScript, each piece of data is of a certain type.
+ * Depending on the data type, each piece of data will have different properties and requirements.
+ * 
+ * 1: 
+ */
+
+/** 
+ * OPERATORS:
+ * 
+ * 0:  We can assign and modify values using operators. Operators are also used to perform calculations and comparisons.
+ * The different types of operators are:
+ * 
+ * 1: Assignment Operators
+ * Used to assign values
+ * 
+ * 2: Arithmetic Operators
+ * Used to perform mathematical calculations
+ * 
+ * 3: Comparison Operators
+ * Used to compare two or more values
+ * 
+ * 4: Logical Operators
+ * Used to evaluate the logic between two or more values
+ * 
+ * 5: Unary Operators
+ * Act on a single operand
+ * 
+ * 6: Ternary Operators
+ * Act on three operands
+ */
+
+// 1. Assignment Operators
+
+
+
 
 
 // need at least 3 string methods
