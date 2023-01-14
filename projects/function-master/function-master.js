@@ -75,8 +75,8 @@ function capitalizeAllWords(string) { // create func to take in string
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    for (var key in object) {
-    return 'Welcome ' + object.name[0].toUpperCase() + object.name.slice(1) + '!';
+    for (var key in object) { // loop thru object
+    return 'Welcome ' + object.name[0].toUpperCase() + object.name.slice(1) + '!'; // return formatted string
 }
 }
 
@@ -85,11 +85,11 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-    for (var key in object) {
+    for (var key in object) { // loop thru object
         return object.name[0].toUpperCase() + 
         object.name.slice(1) + 
         ' is a ' + object.species[0].toUpperCase() 
-        + object.species.slice(1);
+        + object.species.slice(1); // return formatted string
     }
 }
 
@@ -98,13 +98,13 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-        if (!object.noises) {
-            return 'there are no noises'
+        if (!object.noises) { // check if noises property exists
+            return 'there are no noises' // if not, return 'there are no noises'
         }
-        else if (object.noises.length > 0) {
-            return object.noises.join(' ');
-        } else if (object.hasOwnProperty('noises') === true && object.noises.length === 0) {
-            return 'there are no noises';
+        else if (object.noises.length > 0) { // check if noises array has any noises
+            return object.noises.join(' '); // if so, return as a string with each noise separated by a space
+        } else if (object.hasOwnProperty('noises') === true && object.noises.length === 0) { // check if noises array exists but is empty
+            return 'there are no noises'; // if so, return 'there are no noises'
         } 
     }
 
@@ -113,15 +113,15 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-    var splitString = string.split(' ');
-    var matchFound = false;
-    for (var i = 0; i < splitString.length; i++) {
-        if (splitString[i] === word) {
-            matchFound = true;
+    var splitString = string.split(' '); // split string into array w/ each element being one word
+    var matchFound = false; // create flag variable to keep track of whether match has been found
+    for (var i = 0; i < splitString.length; i++) { // loop thru array of words
+        if (splitString[i] === word) { // check if input word matches word in array
+            matchFound = true; // if so change value of flag variable
         }
-    } if (matchFound === true) {
-        return true;
-    } else {
+    } if (matchFound === true) { // if match has been found,
+        return true; // return true
+    } else { // if no match return false
         return false;
     }
 }
@@ -131,8 +131,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-object.friends.push(name);
-return object;
+object.friends.push(name); // add input name to friends property
+return object; // return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -140,21 +140,21 @@ return object;
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-    var matchFound = false;
+    var matchFound = false; // establish flag variable to track whether match has been found
 
-    if (!object.friends) {
-        return false;
+    if (!object.friends) { // check if friends property exists
+        return false; // if not return false
     }
 
-    for (var i = 0; i < object.friends.length; i++) {
-        if (object.friends[i] === name) {
-            matchFound = true;
+    for (var i = 0; i < object.friends.length; i++) { // loop thru object's friends property
+        if (object.friends[i] === name) { // check if friend's name matches input name
+            matchFound = true; // if so change flag to true
         }
     } 
     
-    if (matchFound === true) {
+    if (matchFound === true) { // if match has been found, return true
         return true;
-    } else {
+    } else { // else return false
         return false;
     }
 }
@@ -164,13 +164,13 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-    var nonMatching = [];
-    for (var i = 0; i < array.length; i++) {
-      if (array[i].name !== name && array[i].friends.includes(name) === false) {
-        nonMatching.push(array[i].name);
+    var nonMatching = []; // create array to hold names of people
+    for (var i = 0; i < array.length; i++) { // loop thru input array
+      if (array[i].name !== name && array[i].friends.includes(name) === false) { // check if name is NOT listed in array
+        nonMatching.push(array[i].name); // if name is not there, push name into holder array
       }
     } 
-    return nonMatching;
+    return nonMatching; // return holder array
 }
 
 
@@ -179,8 +179,8 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-        object[key] = value;
-        return object;
+        object[key] = value; // assign object key to input value
+        return object; // return object
     } 
 
 
@@ -191,10 +191,10 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-    for (var key in object) {
-      for (var i = 0; i < array.length; i++) {
-        if (key === array[i]) {
-          delete object[key];
+    for (var key in object) { // loop thru object
+      for (var i = 0; i < array.length; i++) { // loop thru array of strings
+        if (key === array[i]) { // check if object key equals any values listed in array
+          delete object[key]; // if so delete property
         }
       }
     }
@@ -205,12 +205,12 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-    let uniques = [];
-    for (var i = 0; i < array.length; i++) {
-        if (!uniques.includes(array[i])) {
-            uniques.push(array[i]);
+    let uniques = []; // create array to hold numbers
+    for (var i = 0; i < array.length; i++) { // loop thru input array
+        if (!uniques.includes(array[i])) { // check if holder array does not already include each array element
+            uniques.push(array[i]); // if value does not already exist in holder array, push it to holder array
         }
-    } return uniques;
+    } return uniques; // return holder array
 } 
 
 
