@@ -20,6 +20,7 @@ age = 35; // assigns value to age variable
 
 // 1. var
 // Variables created using var can be re-declared or updated
+// They can be accessed either throughout the entire scope of the program or--when declared within a function--only within that function
 var username = 'weresquirrel'; // initializes variable
 console.log(username); // prints => weresquirrel
 var username = 'regularhuman'; // re-declares variable
@@ -33,6 +34,14 @@ let weather = 'sunny'; // initializes variable
 console.log(weather); // prints => sunny
 weather = 'cloudy'; // updates variable
 console.log(weather) // prints => cloudy
+// However, when declared within a code block, the scope of a variable created using let will be limited to that code block
+if (username === 'totalWeirdo') {
+    let foo = 3;
+} // if statement containing a let variable
+console.log(foo); // prints => ReferenceError: foo is not defined at Object
+// It is not possible to reference a variable created using let before it has been declared
+console.log(goo); // prints => Cannot access 'goo' before initialization
+let goo = 'slime'; 
 
 
 // need at least 3 string methods
