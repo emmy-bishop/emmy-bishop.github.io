@@ -93,7 +93,22 @@ console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast
  * Act on three operands
  */
 
-// 1. Assignment Operators
+// 1 Assignment Operators //
+
+var favoriteNumber = 5; // assigns value of 5 to variable
+favoriteNumber += 1; // adds 1 to variable
+console.log(favoriteNumber); // prints => 6
+
+favoriteNumber -= 3; // subtracts 3 from variable
+console.log(favoriteNumber); // prints => 3
+
+favoriteNumber *= 4; // multiplies variable by 4
+console.log(favoriteNumber); // prints => 12
+
+favoriteNumber /= 2; // divides variable by 2
+console.log(favoriteNumber); // prints => 6
+
+
 
 
 
