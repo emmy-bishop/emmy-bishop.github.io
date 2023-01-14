@@ -41,7 +41,13 @@ if (username === 'totalWeirdo') {
 console.log(foo); // prints => ReferenceError: foo is not defined at Object
 // It is not possible to reference a variable created using let before it has been declared
 console.log(goo); // prints => Cannot access 'goo' before initialization
-let goo = 'slime'; 
+let goo = 'slime';
+
+// 3. const
+// Variables created using const cannot be re-declared after initialization
+const toastDoneness = 'burnt'; // initializes variable
+console.log(toastDoneness) // prints => burnt
+toastDoneness = 'a perfect golden-brown'; // prints => TypeError: Assignment to constant variable
 
 
 // need at least 3 string methods
