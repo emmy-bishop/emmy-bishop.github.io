@@ -17,7 +17,7 @@ var username = 'weresquirrel'; // Here, we assign the variable's value to a stri
 console.log(username) // prints => weresquirrel
 
 // 3. reassignment
-username = 'regularhuman'; // Here, we have changed the value of username
+username = 'regularhuman'; // Now, if we want, we can change the value of username
 console.log(username) // prints => regularhuman
 
 
