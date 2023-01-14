@@ -75,7 +75,7 @@ console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast
  * The different types of operators are:
  * 
  * 1: Assignment Operators
- * Used to assign values
+ * Used to assign or reassign values
  * 
  * 2: Arithmetic Operators
  * Used to perform mathematical calculations
@@ -97,20 +97,29 @@ console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast
 
 var favoriteNumber = 5; // assignment operator assigns value of 5 to variable
 
-favoriteNumber += 1; // adds 1 to value of variable using addition assignment operator
+// 1. Addition Assignment Operators
+favoriteNumber += 1; // adds 1 to value of variable
 console.log(favoriteNumber); // prints => 6
 
-favoriteNumber -= 3; // subtracts 3 from variable using subtraction assignment operator
+// 2. Subtraction Assignment Operators
+favoriteNumber -= 3; // subtracts 3 from variable
 console.log(favoriteNumber); // prints => 3
 
-favoriteNumber *= 4; // multiplies variable by 4 using multiplication assignment operator
+// 3. Multiplication Assignment Operators
+favoriteNumber *= 4; // multiplies variable by 4
 console.log(favoriteNumber); // prints => 12
 
-favoriteNumber /= 2; // divides variable by 2 using division assignment operator
+// 4. Division Assignment Operators
+favoriteNumber /= 2; // divides variable by 2
 console.log(favoriteNumber); // prints => 6
 
+// 5. Remainder Assignment Operators
 favoriteNumber %= 3 // divides variable by 3 using remainder assignment operator. Assigns value of remainder
 console.log(favoriteNumber); // prints => 0
+
+// 2 Arithmetic Operators //
+
+
 
 
 
