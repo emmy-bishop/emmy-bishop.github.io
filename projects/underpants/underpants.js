@@ -225,15 +225,16 @@ _.each = function(collection, func) {
 // create array to push values into
 // loop thru given array
 // use indexOf to determine which values to push
+// return new array
 
 _.unique = function(array) {
-    let newArray = [];
-    for (let i = 0; i < array.length; i++) {
+    let duplicates = []; // create container array to push values into
+    for (let i = 0; i < array.length; i++) { // loop thru input array
         if (array.indexOf(array[i]) === i) {
-            newArray.push(array[i]);
+            duplicates.push(array[i]);
         }
     }
-    return newArray;
+    return duplicates;
 }
 
 
@@ -252,6 +253,18 @@ _.unique = function(array) {
 * Extra Credit:
 *   use _.each in your implementation
 */
+
+
+
+_.filter = function(array, func) {
+    let trueValues = []; // create holder array
+    for (let i = 0; i < array.length; i++) { // loop thru input array
+        if (func(array[i], i, array)) { // check if test function call resolves to true
+            trueValues.push(array[i]); // if so, push value into holder array
+        };
+    }
+    return trueValues; // return holder array
+}
 
 
 /** _.reject
