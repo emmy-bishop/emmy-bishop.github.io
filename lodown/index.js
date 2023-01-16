@@ -178,3 +178,23 @@ function filter(array, func) {
 }
 module.exports.filter = filter;
 
+/**
+ * reject: Returns elements for which function call returned false
+ * 
+ * @param { Array }: Function takes in an array
+ * @param { Function }: Function takes in a function
+ * @return { Array }: Function returns an array of elements for which function call returned false
+ */
+
+function reject(array, func) { 
+    let falseValues = []; // create holder array
+    for (let i = 0; i < array.length; i++) { // loop thru input array
+        if (!func(array[i], i, array)) { // check if result of test is false
+            falseValues.push(array[i]); // if so, push each value into holder array
+        }
+    }
+    return falseValues; // return holder array
+}
+module.exports.reject = reject;
+
+
