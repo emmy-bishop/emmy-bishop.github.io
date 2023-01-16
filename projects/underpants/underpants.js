@@ -228,13 +228,13 @@ _.each = function(collection, func) {
 // return new array
 
 _.unique = function(array) {
-    let duplicates = []; // create container array to push values into
+    let uniqueValues = []; // create container array to push values into
     for (let i = 0; i < array.length; i++) { // loop thru input array
         if (array.indexOf(array[i]) === i) {
-            duplicates.push(array[i]);
+            uniqueValues.push(array[i]);
         }
     }
-    return duplicates;
+    return uniqueValues;
 }
 
 
@@ -342,7 +342,21 @@ _.partition = function(array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
-// check if collection is an array
+
+
+_.map = function(collection, func) {
+    let stuff = []; // create holder array
+    if (Array.isArray(collection)) { // check if input collection is an array
+        for (let i = 0; i < collection.length; i++) { // if so, loop thru collection
+            stuff.push(func(collection[i], i, collection)); // call function for each element in array and push result to holder array
+        }
+    } else { // if input collection is an object
+        for (let key in collection) { // loop thru object
+            stuff.push(func(collection[key], key, collection)); // call func for each element in array and push result to holder array
+        }
+    }
+    return stuff; // return holder array
+}
 
 
 /** _.pluck
