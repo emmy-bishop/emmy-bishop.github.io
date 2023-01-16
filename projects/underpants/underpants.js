@@ -21,6 +21,10 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+_.identity = function (val) {
+    return val;
+}
+
 
 /** _.typeOf
 * Arguments:
@@ -41,6 +45,26 @@ var _ = {};
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
+
+_.typeOf = function(val) {
+    if (typeof val === 'string') {
+        return 'string';
+    } else if (typeof val === 'number') {
+        return 'number';
+    } else if (typeof val === 'boolean') {
+        return 'boolean';
+    } else if (typeof val === 'function') {
+        return 'function';
+    } else if (Array.isArray(val)) {
+        return 'array';
+    } else if (val === null) {
+        return 'null';
+    } else if (val === undefined) {
+        return 'undefined';
+    } else if (typeof val === 'object') {
+        return 'object';
+    }
+}
 
 
 /** _.first
