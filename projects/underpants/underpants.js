@@ -94,12 +94,12 @@ _.typeOf = function(val) {
 _.first = function(array, number) {
     if (Array.isArray(array) === false || number < 0) {
         return [];
-    } if (!number || typeof number !== 'number') {
+    } if (number === undefined || typeof number !== 'number') {
         return array[0];
     } else if (number > array.length) {
         return array;
     } else {
-        return array.splice(0, 0, number);
+        return array.slice(0, number);
     }
 }
 
@@ -121,6 +121,18 @@ _.first = function(array, number) {
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
+
+_.last = function(array, number) {
+    if (Array.isArray(array) === false || number < 0) {
+        return [];
+    } if (number === undefined || typeof number !== 'number') {
+        return array[array.length - 1];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        return array.slice(array.length - number, array.length);
+    }
+}
 
 
 /** _.indexOf
