@@ -197,4 +197,43 @@ function reject(array, func) {
 }
 module.exports.reject = reject;
 
+/**
+ * partition: Function passes each element in array and runs it through another function. Returns an array of 2 arrays representing truthy vs. falsy values.
+ * 
+ * @param { Array }: Function takes in an array
+ * @param { Function }: Function takes in a function
+ * @return { Array }: Function returns array containing 2 sub-arrays
+ */
 
+function partition(array, func) {
+    let truthy = [];
+    let falsy = [];
+    for (let i = 0; i < array.length; i++) {
+        func(array[i], i, array) ? truthy.push(array[i]) : falsy.push(array[i])
+    }
+    return [truthy, falsy];
+}
+module.exports.partition = partition;
+
+/**
+ * map: Passes each element from given array/object into given function and returns array containing results
+ * 
+ * @param { Array }: Function takes in an array OR
+ * @param { Object }: Function takes in an object
+ * @param { Function }: Function takes in a function
+ * @return { Array }: Function returns array containing results
+ */
+
+function map(collection, func) {
+    let stuff = [];
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+            stuff.push(func(collection[i], i, collection));
+        }
+    } else {
+        for (let key in collection) {
+            stuff.push(func(collection[key], key, collection));
+        }
+    }
+    return stuff;
+}
