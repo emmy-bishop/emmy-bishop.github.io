@@ -85,6 +85,24 @@ _.typeOf = function(val) {
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+// check if array is array
+// if not, return []
+// check if number is not given OR not a number
+// if so, return  only first element
+// otherwise return the first [number] items of array
+
+_.first = function(array, number) {
+    if (Array.isArray(array) === false || number < 0) {
+        return [];
+    } if (!number || typeof number !== 'number') {
+        return array[0];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        return array.splice(0, 0, number);
+    }
+}
+
 
 /** _.last
 * Arguments:
