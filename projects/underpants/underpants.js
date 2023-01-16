@@ -281,6 +281,17 @@ _.filter = function(array, func) {
 */
 
 
+_.reject = function(array, func) { 
+    let falseValues = []; // create holder array
+    for (let i = 0; i < array.length; i++) { // loop thru input array
+        if (func(array[i], i, array) === false) { // check if result of test is false
+            falseValues.push(array[i]); // if so, push each value into holder array
+        }
+    }
+    return falseValues; // return holder array
+}
+
+
 /** _.partition
 * Arguments:
 *   1) An array
