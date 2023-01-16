@@ -222,6 +222,17 @@ _.each = function(collection, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+// create array to push values into
+// loop thru given array
+// use indexOf to determine which values to push
+
+_.unique = function(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        
+    }
+}
+
 
 /** _.filter
 * Arguments:
