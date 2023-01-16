@@ -284,7 +284,7 @@ _.filter = function(array, func) {
 _.reject = function(array, func) { 
     let falseValues = []; // create holder array
     for (let i = 0; i < array.length; i++) { // loop thru input array
-        if (func(array[i], i, array) === false) { // check if result of test is false
+        if (!func(array[i], i, array)) { // check if result of test is false
             falseValues.push(array[i]); // if so, push each value into holder array
         }
     }
@@ -311,6 +311,20 @@ _.reject = function(array, func) {
 }
 */
 
+// create 2 holder arrays, 1 for truthy 1 for falsy
+// loop thru input array
+// call function for each element
+// return holder arrays
+
+_.partition = function(array, func) {
+    let truthy = [];
+    let falsy = [];
+    for (let i = 0; i < array.length; i++) {
+        func(array[i], i, array) ? truthy.push(array[i]) : falsy.push(array[i])
+    }
+    return [truthy, falsy];
+}
+
 
 /** _.map
 * Arguments:
@@ -327,6 +341,8 @@ _.reject = function(array, func) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
+
+// check if collection is an array
 
 
 /** _.pluck
