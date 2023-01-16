@@ -105,6 +105,20 @@ function indexOf(array, value) {
         }
     }
 }
+module.exports.indexOf = indexOf;
+
+/**
+ * contains: Returns true if given array contains given value. Otherwise, returns false.
+ * 
+ * @param { Array }: Function takes in an array
+ * @param { Any value }: Function takes in any value
+ * @return { Boolean }: Function returns true if array contains value and false if not.
+ */
+
+function contains(array, value) {
+    return (array.includes(value) ? true : false);
+ }
+ module.exports.contains = contains;
 
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
@@ -126,3 +140,41 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
+
+/**
+ * unique: Returns an array with all duplicates removed
+ * 
+ * @param { Array }: Function takes in an array
+ * @return { Array }: Function returns version of given array with all duplicates removed
+ */
+
+function unique(array) {
+    let uniqueValues = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array.indexOf(array[i]) === i) {
+            uniqueValues.push(array[i]);
+        }
+    }
+    return uniqueValues;
+}
+module.exports.unique = unique;
+
+/**
+ * filter: Returns array of elements for which function call returned true
+ * 
+ * @param { Array }: Function takes in an array
+ * @param { Function }: Function takes in a function
+ * @return { Array }: Function returns array of elements for which function call returned true
+ */
+
+function filter(array, func) {
+    let trueValues = []; // create holder array
+    for (let i = 0; i < array.length; i++) { // loop thru input array
+        if (func(array[i], i, array)) { // check if test function call resolves to true
+            trueValues.push(array[i]); // if so, push value into holder array
+        };
+    }
+    return trueValues; // return holder array
+}
+module.exports.filter = filter;
+
