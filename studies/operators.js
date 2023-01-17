@@ -51,6 +51,7 @@ console.log(favoriteNumber); // prints => 4
 favoriteNumber **= 2; // raises variable to the power of 2
 console.log(favoriteNumber); // prints => 16
 
+
 // 2 Arithmetic Operators //
 
 // 1. Addition Operator
@@ -84,6 +85,7 @@ console.log(leastFavoriteNumber); // prints => 7
 // 8. Decrement Operator
 leastFavoriteNumber--; // subtracts 1 from number
 console.log(leastFavoriteNumber); // prints => 6
+
 
 // 3 Comparison Operators //
 
@@ -133,5 +135,37 @@ console.log(4 <= 5); // prints => true
 console.log(5 <= 5); // prints => true
 console.log(6 <= 5); // prints => false
 
+
+// 4 Logical Operators //
+
+// 1. And Operator
+// Returns true only if each given condition is true
+console.log(5 === 5 && 5 >= 4); // prints => true
+console.log(5 === 5 && 5 > 6); // prints => false
+
+// 2. Or Operator
+// Returns true if any given condition is true
+console.log(5 === 5 || 5 > 100); // prints => true
+console.log(5 === 4 || 5 > 100); // prints => false
+
+// 3. Not Operator
+// Returns true if given condition is false
+console.log(!true); // prints => false
+
+
+// 5 Unary Operators //
+
+// 1. type of
+// Returns a string indicating the data type of the given value
+console.log(typeof 5); // prints => number
+
+// 2. Delete
+// Removes a property from an object
+let baguette = {
+    length: '1 meter',
+    crustiness: 'very crusty',
+};
+delete baguette.length; // deletes length property
+console.log(baguette); // returns {crustiness: 'very crusty'};
 
 
