@@ -288,11 +288,13 @@ _.every = function(collection, func) {
 }
 module.exports.every = every;
 
-
-
-
-
-
+/**
+ * some: Designed to check each element of a collection and return a result of true if at least one element is truthy. Otherwise, returns false.
+ * 
+ * @param { Array or Object }: Function takes in an array or an object
+ * @param { Function }: Function takes in a function
+ * @return { Boolean }: Function returns a boolean value indicating truthiness vs. falsiness of given values
+ */
 
 function some(collection, func) {
     if (!func) {
@@ -320,8 +322,19 @@ function some(collection, func) {
         }
        }
 }
+module.exports.some = some;
+
+
+/**
+ * extend: Designed to copy properties from object(s) into another object
+ * 
+ * @param { Object }: Function takes in multiple objects
+ * @return { Object }: Function returns a modified version of first given object
+ */
+
 
 function extend(object1, ...objects) {
     Object.assign(object1, ...objects);
     return object1;
 }
+module.exports.extend = extend;
