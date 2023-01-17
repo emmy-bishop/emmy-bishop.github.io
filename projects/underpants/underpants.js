@@ -510,6 +510,28 @@ _.some = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+// if no seed, use first element/value of collection as seed and continue to next element
+// loop thru array
+// on first iteration, use value of seed as 'previous result'
+// call func for each array[i] w/ arguments of previous result, element, index
+// use return value as 'previous result' for next iteration
+// after last iteration, return the return value of final function call
+
+_. reduce = function(array, func, seed) {
+    if (seed) {
+        for (let i = 0; i < array.length; i++) {
+            return func(func(), array[i], i);
+        }
+    }
+}
+
+
+// if (!seed) {
+//     for (let i = 0; i < array.length; i++) {
+//        return func(array[0], array[i], i);
+//     }
+// }
+
 
 /** _.extend
 * Arguments:
