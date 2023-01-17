@@ -239,7 +239,7 @@ function map(collection, func) {
 module.exports.map = map;
 
 /**
- * pluck: 
+ * pluck: Designed to return an array containing the value of the given property for every element in the array
  * 
  * @param { Array }: Function takes in an array of objects
  * @param { Property }: Function takes in an object property
@@ -253,6 +253,40 @@ function pluck(array, prop) {
     return plucked;
 } 
 module.exports.pluck = pluck;
+
+/**
+ * every: Designed to check each element of a collection and return a result of true if each value is truthy. If any elements are falsy, returns false.
+ * 
+ * @param { Array or Object }: Function takes in an array or an object
+ * @param { Function }: Function takes in a function
+ * @return { Boolean }: Function returns a boolean value indicating truthiness vs. falsiness of given values
+ */
+
+_.every = function(collection, func) {
+    if (!func) {
+        for (let i = 0; i < collection.length; i++) {
+            if (!collection[i]) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+            if (!func(collection[i], i, collection)) {
+                return false;
+            }
+        } return true;
+       } else {
+        for (let key in collection) {
+            if (!func(collection[key], key, collection)) {
+                return false;
+            };
+        } return true;
+       }
+}
+module.exports.every = every;
 
 
 
