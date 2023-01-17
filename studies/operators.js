@@ -44,8 +44,12 @@ favoriteNumber /= 2; // divides variable by 2
 console.log(favoriteNumber); // prints => 6
 
 // 5. Remainder Assignment Operators
-favoriteNumber %= 3 // divides variable by 3 using remainder assignment operator. Assigns value of remainder
-console.log(favoriteNumber); // prints => 0
+favoriteNumber %= 1.5; // divides variable by 1.5 using remainder assignment operator. Assigns value of remainder
+console.log(favoriteNumber); // prints => 4
+
+// 6. Exponentiation Assignment Operators
+favoriteNumber **= 2; // raises variable to the power of 2
+console.log(favoriteNumber); // prints => 16
 
 // 2 Arithmetic Operators //
 
