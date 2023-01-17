@@ -401,7 +401,36 @@ _.pluck = function(array, prop) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+// check if collection is array
+// if so loop thru and call func for each element, index, collection
+// else it's an object
+// loop thru and call func for each value, key, collection
 
+
+_.every = function(collection, func) {
+    if (!func) { // check if function was passed in
+        for (let i = 0; i < collection.length; i++) { // if so loop thru collection
+            if (!collection[i]) { // check if any given value is falsy
+                return false; // if so return false
+            } else { // else return true
+                return true;
+            }
+        }
+    }
+    if (Array.isArray(collection)) { // check if collection is array
+        for (let i = 0; i < collection.length; i++) { // if so loop thru array
+            if (!func(collection[i], i, collection)) { // call function for each element/index/the entire array
+                return false; // if result of calling function was false, return false
+            }
+        } return true; // otherwise return true
+       } else { // else, collection is an object
+        for (let key in collection) { // loop thru object
+            if (!func(collection[key], key, collection)) { // call function for each value/key/the entire object
+                return false; // if result of calling function was false, return false
+            };
+        } return true; // else return true
+       }
+}
 
 
 /** _.some
