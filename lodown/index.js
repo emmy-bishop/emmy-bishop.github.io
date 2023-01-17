@@ -3,7 +3,7 @@
 // YOU KNOW WHAT TO DO //
 
 /**
- * identity: Returns input value unchanged.
+ * identity: Designed to return given value unchanged
  * 
  * @param { Any value }: Function takes in any value
  * @return { Any value }: Function returns input value unchanged
@@ -14,11 +14,12 @@ function identity(val) {
 }
 module.exports.identity = identity;
 
+
 /**
- * typeOf: Returns type of input value.
+ * typeOf: Designed to return the type of a given value
  * 
  * @param { Any value }: Function takes in any value
- * @return { String }: Function returns string describing type of input value
+ * @return { String }: Function returns string describing type of given value
  */
 
 function typeOf(val) {
@@ -40,15 +41,15 @@ function typeOf(val) {
         return 'object';
     }
 }
-
 module.exports.typeOf = typeOf;
 
+
 /**
- * first: Returns first element or elements in array
+ * first: Designed to return the first element or elements in a given array
  * 
  * @param { Array }: Function takes in an array
  * @param { Number }: Function takes in a number
- * @return { Array }: Function returns empty array if input array is not an array OR first array element OR specified range of elements
+ * @return { Array }: Function returns first array element(s). If given number does not exist or is not a number, returns empty array
  */
 
 function first(array, number) {
@@ -64,14 +65,13 @@ function first(array, number) {
 }
 module.exports.first = first;
 
+
 /**
- * last: Returns last element or elements in array
+ * last: Designed to return the last element or elements in a given array
  * 
  * @param { Array }: Function takes in an array
  * @param { Number }: Function takes in a number
- * @return { Array }: Function returns empty array if input array is not an array.
- * If number is not given or not a number, returns only the last element.
- * Otherwise, returns last x number of items in array.
+ * @return { Array }: Function returns last array element(s). If given number does not exist or is not a number, returns empty array
  */
 
 function last (array, number) {
@@ -87,13 +87,14 @@ function last (array, number) {
 }
 module.exports.last = last;
 
+
 /**
- * indexOf: Returns index of array that is the first occurrence of given value. If value does not exist in array, returns -1.
+ * indexOf: Designed to return the index of the given array that represents the first occurrence of the given value
  * 
  * @param { Array }: Function takes in an array
  * @param { Any value }: Function takes in any value
  * @return { Number }: Function returns number representing index that is the first occurrence of given value.
- * If given value does not exist within array, returns -1.
+ * If given value does not exist within array, returns -1
  */
 
 function indexOf(array, value) {
@@ -107,12 +108,13 @@ function indexOf(array, value) {
 }
 module.exports.indexOf = indexOf;
 
+
 /**
- * contains: Returns true if given array contains given value. Otherwise, returns false.
+ * contains: Designed to return true if given array contains given value. Otherwise, returns false.
  * 
  * @param { Array }: Function takes in an array
  * @param { Any value }: Function takes in any value
- * @return { Boolean }: Function returns true if array contains value and false if not.
+ * @return { Boolean }: Function returns true if array contains value, false if not
  */
 
 function contains(array, value) {
@@ -120,11 +122,12 @@ function contains(array, value) {
  }
  module.exports.contains = contains;
 
+
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
- * action Function to each value in the collection.
+ * action Function to each value in the collection
  * 
- * @param {Array or Object} collection: The collection over which to iterate.
+ * @param {Array or Object} collection: The collection over which to iterate
  * @param {Function} action: The Function to be applied to each value in the 
  * collection
  */
@@ -141,8 +144,9 @@ function each(collection, action) {
 }
 module.exports.each = each;
 
+
 /**
- * unique: Returns an array with all duplicates removed
+ * unique: Designed to return an array with all duplicates removed
  * 
  * @param { Array }: Function takes in an array
  * @return { Array }: Function returns version of given array with all duplicates removed
@@ -159,8 +163,9 @@ function unique(array) {
 }
 module.exports.unique = unique;
 
+
 /**
- * filter: Returns array of elements for which function call returned true
+ * filter: Designed to return all elements for which a function call returned a true result
  * 
  * @param { Array }: Function takes in an array
  * @param { Function }: Function takes in a function
@@ -178,8 +183,9 @@ function filter(array, func) {
 }
 module.exports.filter = filter;
 
+
 /**
- * reject: Returns elements for which function call returned false
+ * reject: Designed to return all elements for which function call returned a false result
  * 
  * @param { Array }: Function takes in an array
  * @param { Function }: Function takes in a function
@@ -187,18 +193,19 @@ module.exports.filter = filter;
  */
 
 function reject(array, func) { 
-    let falseValues = []; // create holder array
-    for (let i = 0; i < array.length; i++) { // loop thru input array
-        if (!func(array[i], i, array)) { // check if result of test is false
-            falseValues.push(array[i]); // if so, push each value into holder array
+    let falseValues = [];
+    for (let i = 0; i < array.length; i++) {
+        if (!func(array[i], i, array)) {
+            falseValues.push(array[i]);
         }
     }
-    return falseValues; // return holder array
+    return falseValues;
 }
 module.exports.reject = reject;
 
+
 /**
- * partition: Function passes each element in array and runs it through another function. Returns an array of 2 arrays representing truthy vs. falsy values.
+ * partition: Designed to run each element in a given array through a function and return an array of 2 sub-arrays: one for which the function call returned true, one for which the function call returned false
  * 
  * @param { Array }: Function takes in an array
  * @param { Function }: Function takes in a function
@@ -215,8 +222,9 @@ function partition(array, func) {
 }
 module.exports.partition = partition;
 
+
 /**
- * map: Passes each element from given array/object into given function and returns array containing results
+ * map: Designed to pass each element from given array/object into a given function and return an array containing the results
  * 
  * @param { Array or Object }: Function takes in an array OR object
  * @param { Function }: Function takes in a function
