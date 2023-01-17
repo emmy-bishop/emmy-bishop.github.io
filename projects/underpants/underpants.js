@@ -371,6 +371,13 @@ _.map = function(collection, func) {
 */
 
 
+_.pluck = function(array, prop) { 
+    let plucked = array.map(function(array) { // loop thru array of objects
+        return array[prop]; // push value of input property into new array
+    });
+    return plucked; // return new array
+} 
+
 
 
 /** _.every
@@ -393,6 +400,8 @@ _.map = function(collection, func) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+
+
 
 
 /** _.some
