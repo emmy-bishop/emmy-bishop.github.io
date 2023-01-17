@@ -66,13 +66,25 @@ console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast
 // 3 Hoisting //
 
 // Variable declarations are hoisted to the top of the global scope
-// However, their values are not. 
+// However, the values contained within those variables are not hoisted
 // Referring to a variable before it has been declared will return 'undefined'
 // This is because in the interpreter's 'mind,' the variable exists, but its value does not
 console.log(username); // prints => undefined
 var username = 'weresquirrel'; // declares variable and sets value
 
-// Function declarations AND their 
+// In contrast, function declarations are hoisted in their entirety
+// This makes it possible to invoke a function at any point within the code, even before its declaration
+console.log(addNumbers(3, 1)); // prints => 4
+function addNumbers(number1, number2) {
+    return number1 + number2;
+};
+
+// Only function declarations are hoisted
+// Function expressions are not
+console.log(addNumbers(3, 1)); // prints => TypeError: addNumbers is not a function at Object
+var addNumbers = function(number1, number2) {
+    return number1 + number2;
+};
 
 
 
