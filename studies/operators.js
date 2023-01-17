@@ -75,8 +75,14 @@ console.log(leastFavoriteNumber); // prints => 6
 
 // 6. Exponentiation Operator
 leastFavoriteNumber = 1.81712 ** 3 // raises number to the power of another number
-console.log(leastFavoriteNumber); // prints => 5.99999
+console.log(leastFavoriteNumber); // prints => 6
 
+// 7. Increment Operator
+leastFavoriteNumber++; // adds 1 to number
+console.log(leastFavoriteNumber); // prints => 7
 
+// 8. Decrement Operator
+leastFavoriteNumber--; // subtracts 1 from number
+console.log(leastFavoriteNumber); // prints => 6
 
 
