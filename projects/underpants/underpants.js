@@ -3,7 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-const { result } = require("lodash");
+// const { result } = require("lodash");
 
 var _ = {};
 
@@ -519,16 +519,16 @@ _.some = function(collection, func) {
 // use return value as 'previous result' for next iteration
 // after last iteration, return the return value of final function call
 
-_. reduce = function(array, func, seed) {
-    let result = seed;
-    for (let i = 0; i < array.length; i++) {
-         if (!seed) {
-            return func(func(seed, array[i], i), array[i], i);
-        } else {
-            let result = func(result, array[i], i);
-        }
-    }
-}
+// _. reduce = function(array, func, seed) {
+//     let result = seed;
+//     for (let i = 0; i < array.length; i++) {
+//          if (!seed) {
+//             return func(func(seed, array[i], i), array[i], i);
+//         } else {
+//             let result = func(result, array[i], i);
+//         }
+//     }
+// }
 
 
 // if (!seed) {
@@ -552,6 +552,17 @@ _. reduce = function(array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+// access object 2's properties
+// copy obj2's properties to obj1
+// check if more objects have been passed in
+// if so, copy their properties to obj1 in the order they were passed in
+// return updated obj1
+
+_.extend = function(object1, ...objects) {
+    Object.assign(object1, ...objects);
+    return object1;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
