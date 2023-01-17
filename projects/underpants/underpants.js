@@ -3,6 +3,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+const { result } = require("lodash");
+
 var _ = {};
 
 
@@ -518,9 +520,12 @@ _.some = function(collection, func) {
 // after last iteration, return the return value of final function call
 
 _. reduce = function(array, func, seed) {
-    if (seed) {
-        for (let i = 0; i < array.length; i++) {
-            return func(func(), array[i], i);
+    let result = seed;
+    for (let i = 0; i < array.length; i++) {
+         if (!seed) {
+            return func(func(seed, array[i], i), array[i], i);
+        } else {
+            let result = func(result, array[i], i);
         }
     }
 }
