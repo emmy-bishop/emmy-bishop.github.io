@@ -168,4 +168,11 @@ let baguette = {
 delete baguette.length; // deletes length property
 console.log(baguette); // returns {crustiness: 'very crusty'};
 
+// 6 Ternary Operator //
 
+// The conditional (ternary) operator is the only operator in JavaScript that takes 3 operands
+// The first operand is a condition to evaluate
+// The second operand is the action to perform if the condition is true
+// The third operand is the action to perform if the condition is false
+console.log(5 > 4 ? true : false); // prints => true
+console.log(5 < 4 ? true : false); // prints => false
