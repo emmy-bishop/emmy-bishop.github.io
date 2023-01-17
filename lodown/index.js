@@ -237,3 +237,30 @@ function map(collection, func) {
     }
     return stuff;
 }
+
+function some(collection, func) {
+    if (!func) {
+        for (let i = 0; i < collection.length; i++) {
+            if (collection[i]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+            if (func(collection[i], i, collection)) {
+                return true;
+            }
+        } return false;
+       } else {
+        for (let key in collection) {
+            if (func(collection[key], key, collection)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+       }
+}
