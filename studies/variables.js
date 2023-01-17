@@ -9,6 +9,10 @@
  * This name must be unique. If we wish to assign a value to a variable, we can use an = sign followed by the value.
  * 
  * 2: Var, Let, and Const: Var, let, and const are different declarative keywords and they do different things.
+ * 
+ * 3: Hoisting: Hoisting refers to the order in which the code interpreter parses each line of code. 
+ * Function and variable declarations are "hoisted" to the top of the global scope.
+ * This makes it possible to call upon them from anywhere within the code, even before they have technically been declared.
  */
 
 // 1 Declaration and Assignment //
@@ -57,6 +61,19 @@ if (toastDoneness === 'a perfect golden-brown') {
     const feelingsAboutToast = 'negative';
 }
 console.log(feelingsAboutToast); // prints => ReferenceError: feelingsAboutToast is not defined at Object
+
+
+// 3 Hoisting //
+
+// Variable declarations are hoisted to the top of the global scope
+// However, their values are not. 
+// Referring to a variable before it has been declared will return 'undefined'
+// This is because in the interpreter's 'mind,' the variable exists, but its value does not
+console.log(username); // prints => undefined
+var username = 'weresquirrel'; // declares variable and sets value
+
+// Function declarations AND their 
+
 
 
 
