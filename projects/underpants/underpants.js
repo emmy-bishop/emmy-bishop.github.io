@@ -560,8 +560,7 @@ _.some = function(collection, func) {
 // return updated obj1
 
 _.extend = function(object1, ...objects) {
-    Object.assign(object1, ...objects);
-    return object1;
+   return Object.assign(object1, ...objects);
 }
 
 //////////////////////////////////////////////////////////////////////
