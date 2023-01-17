@@ -87,19 +87,51 @@ console.log(leastFavoriteNumber); // prints => 6
 
 // 3 Comparison Operators //
 
-// 1. Loose Equality Operator
+// 1. Equality Operator
 // Compares values after converting both to the same type
 console.log(5 == 8); // prints => false
 console.log(5 == 5); // prints => true
 console.log(5 == '5'); // prints => true
 
 // 2. Strict Equality Operator
-// Compares values, but does not convert both to the same type 
+// Compares values, but does not convert them to the same type 
 // Returns true only when both value and type match
 console.log(5 === 5); // prints => true
 console.log(5 === '5'); // prints => false
 
+// 3. Inequality Operator
+// After converting given values to the same type, returns true if the values do not equal each other 
+console.log(5 != 5); // prints => false
+console.log(5 != 8); // prints => true
+console.log(5 != '5'); // prints => false
 
+// 4. Strict Inequality Operator
+// Compares values, but does not convert them to the same type
+console.log(5 !== 5); // prints => false
+console.log(5 !== 8); // prints => true
+console.log(5 !== '5'); // prints => true
+
+// 5. Greater Than Operator
+// Compares values and returns true if one is greater than the other
+console.log(5 > 4); // prints => true
+console.log(4 > 5); // prints => false
+
+// 6. Less Than Operator
+// Compares values and returns true if one is less than the other
+console.log(4 < 5); // prints => true
+console.log(5 < 4); // prints => false
+
+// 7. Greater Than or Equal to Operator
+// Compares values and returns true if one is greater than or equal to the other
+console.log(5 >= 4); // prints => true
+console.log(5 >= 5); // prints => true
+console.log(5 >= 6); // prints => false
+
+// 7. Less Than or Equal to Operator
+// Compares values and returns true if one is less than or equal to the other
+console.log(4 <= 5); // prints => true
+console.log(5 <= 5); // prints => true
+console.log(6 <= 5); // prints => false
 
 
 
