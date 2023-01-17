@@ -218,8 +218,7 @@ module.exports.partition = partition;
 /**
  * map: Passes each element from given array/object into given function and returns array containing results
  * 
- * @param { Array }: Function takes in an array OR
- * @param { Object }: Function takes in an object
+ * @param { Array or Object }: Function takes in an array OR object
  * @param { Function }: Function takes in a function
  * @return { Array }: Function returns array containing results
  */
@@ -237,6 +236,29 @@ function map(collection, func) {
     }
     return stuff;
 }
+module.exports.map = map;
+
+/**
+ * pluck: 
+ * 
+ * @param { Array }: Function takes in an array of objects
+ * @param { Property }: Function takes in an object property
+ * @return { Array }: Function returns array containing the value of input property for every object in input array
+ */
+
+function pluck(array, prop) { 
+    let plucked = array.map(function(array) {
+        return array[prop];
+    });
+    return plucked;
+} 
+module.exports.pluck = pluck;
+
+
+
+
+
+
 
 function some(collection, func) {
     if (!func) {
@@ -263,4 +285,9 @@ function some(collection, func) {
             }
         }
        }
+}
+
+function extend(object1, ...objects) {
+    Object.assign(object1, ...objects);
+    return object1;
 }
