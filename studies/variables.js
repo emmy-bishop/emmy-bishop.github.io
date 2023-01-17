@@ -10,9 +10,9 @@
  * 
  * 2: Var, Let, and Const: Var, let, and const are different declarative keywords and they do different things.
  * 
- * 3: Hoisting: Hoisting refers to the order in which the code interpreter parses each line of code. 
+ * 3: Hoisting: Hoisting refers to the order in which the JavaScript interpreter parses each line of code. 
  * Function and variable declarations are "hoisted" to the top of the global scope.
- * This makes it possible to call upon them from anywhere within the code, even before they have technically been declared.
+ * This makes it possible to invoke them from anywhere within the code, even before they have technically been declared.
  */
 
 // 1 Declaration and Assignment //
@@ -75,14 +75,14 @@ var username = 'weresquirrel'; // declares variable and sets value
 // In contrast, function declarations are hoisted in their entirety
 // This makes it possible to invoke a function at any point within the code, even before its declaration
 console.log(addNumbers(3, 1)); // prints => 4
-function addNumbers(number1, number2) {
+function addNumbers(number1, number2) { // declares function which will return the sum of any 2 given numbers
     return number1 + number2;
 };
 
 // Only function declarations are hoisted
 // Function expressions are not
 console.log(addNumbers(3, 1)); // prints => TypeError: addNumbers is not a function at Object
-var addNumbers = function(number1, number2) {
+var addNumbers = function(number1, number2) { // assigns value of function to variable
     return number1 + number2;
 };
 
