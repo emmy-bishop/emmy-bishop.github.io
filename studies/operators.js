@@ -85,4 +85,21 @@ console.log(leastFavoriteNumber); // prints => 7
 leastFavoriteNumber--; // subtracts 1 from number
 console.log(leastFavoriteNumber); // prints => 6
 
+// 3 Comparison Operators //
+
+// 1. Loose Equality Operator
+// Compares values after converting both to the same type
+console.log(5 == 8); // prints => false
+console.log(5 == 5); // prints => true
+console.log(5 == '5'); // prints => true
+
+// 2. Strict Equality Operator
+// Compares values, but does not convert both to the same type 
+// Returns true only when both value and type match
+console.log(5 === 5); // prints => true
+console.log(5 === '5'); // prints => false
+
+
+
+
 
