@@ -47,7 +47,7 @@ module.exports.typeOf = typeOf;
 /**
  * first: Designed to return the first element or elements in a given array
  * 
- * @param { Array }: Function takes in an array
+ * @param { Array } collection: Function takes in an array to be checked
  * @param { Number }: Function takes in a number
  * @return { Array }: Function returns first array element(s). If given number does not exist or is not a number, returns empty array
  */
@@ -69,7 +69,7 @@ module.exports.first = first;
 /**
  * last: Designed to return the last element or elements in a given array
  * 
- * @param { Array }: Function takes in an array
+ * @param { Array } collection: Function takes in an array to be checked
  * @param { Number }: Function takes in a number
  * @return { Array }: Function returns last array element(s). If given number does not exist or is not a number, returns empty array
  */
@@ -91,7 +91,7 @@ module.exports.last = last;
 /**
  * indexOf: Designed to return the index of the given array that represents the first occurrence of the given value
  * 
- * @param { Array }: Function takes in an array
+ * @param { Array } collection: Function takes in an array over which to iterate
  * @param { Any value }: Function takes in any value
  * @return { Number }: Function returns number representing index that is the first occurrence of given value.
  * If given value does not exist within array, returns -1
@@ -110,10 +110,10 @@ module.exports.indexOf = indexOf;
 
 
 /**
- * contains: Designed to return true if given array contains given value. Otherwise, returns false.
+ * contains: Designed to return true if given array contains given value. Otherwise, returns false
  * 
- * @param { Array }: Function takes in an array
- * @param { Any value }: Function takes in any value
+ * @param { Array } collection: Function takes in the array to be checked
+ * @param { Any value }: Function takes in any value to be checked against array
  * @return { Boolean }: Function returns true if array contains value, false if not
  */
 
@@ -148,7 +148,7 @@ module.exports.each = each;
 /**
  * unique: Designed to return an array with all duplicates removed
  * 
- * @param { Array }: Function takes in an array
+ * @param { Array } collection: Function takes in an array over which to iterate
  * @return { Array }: Function returns version of given array with all duplicates removed
  */
 
@@ -167,8 +167,8 @@ module.exports.unique = unique;
 /**
  * filter: Designed to return all elements for which a function call returned a true result
  * 
- * @param { Array }: Function takes in an array
- * @param { Function }: Function takes in a function
+ * @param { Array } collection: Function takes in an array over which to iterate
+ * @param { Function } action: Function takes in a function to be applied to each value in the collection
  * @return { Array }: Function returns array of elements for which function call returned true
  */
 
@@ -187,8 +187,8 @@ module.exports.filter = filter;
 /**
  * reject: Designed to return all elements for which function call returned a false result
  * 
- * @param { Array }: Function takes in an array
- * @param { Function }: Function takes in a function
+ * @param { Array } collection: Function takes in an array over which to iterate
+ * @param { Function } action: Function takes in a function to be applied to each value in the array
  * @return { Array }: Function returns an array of elements for which function call returned false
  */
 
@@ -207,8 +207,8 @@ module.exports.reject = reject;
 /**
  * partition: Designed to run each element in a given array through a function and return an array of 2 sub-arrays: one for which the function call returned true, one for which the function call returned false
  * 
- * @param { Array }: Function takes in an array
- * @param { Function }: Function takes in a function
+ * @param { Array } collection: Function takes in an array over which to iterate
+ * @param { Function } action: Function takes in a function to be applied to each value in the array
  * @return { Array }: Function returns array containing 2 sub-arrays
  */
 
@@ -226,8 +226,8 @@ module.exports.partition = partition;
 /**
  * map: Designed to pass each element from given array/object into a given function and return an array containing the results
  * 
- * @param { Array or Object }: Function takes in an array OR object
- * @param { Function }: Function takes in a function
+ * @param { Array or Object } collection: Function takes in an array OR object
+ * @param { Function } action: Function takes in a function to be applied to each value in the collection
  * @return { Array }: Function returns array containing results
  */
 
@@ -249,7 +249,7 @@ module.exports.map = map;
 /**
  * pluck: Designed to return an array containing the value of the given property for every element in the array
  * 
- * @param { Array }: Function takes in an array of objects
+ * @param { Array } collection: Function takes in an array of objects over which to iterate
  * @param { Property }: Function takes in an object property
  * @return { Array }: Function returns array containing the value of input property for every object in input array
  */
@@ -265,8 +265,8 @@ module.exports.pluck = pluck;
 /**
  * every: Designed to check each element of a collection and return a result of true if each value is truthy. If any elements are falsy, returns false.
  * 
- * @param { Array or Object }: Function takes in an array or an object
- * @param { Function }: Function takes in a function
+ * @param { Array or Object } collection: Function takes in an array or an object over which to iterate
+ * @param { Function } action: Function takes in a function to be applied to each value in the collection
  * @return { Boolean }: Function returns a boolean value indicating truthiness vs. falsiness of given values
  */
 
@@ -299,8 +299,8 @@ module.exports.every = every;
 /**
  * some: Designed to check each element of a collection and return a result of true if at least one element is truthy. Otherwise, returns false.
  * 
- * @param { Array or Object }: Function takes in an array or an object
- * @param { Function }: Function takes in a function
+ * @param { Array or Object } collection: Function takes in an array or an object over which to iterate
+ * @param { Function } action: Function takes in a function to be applied to each value in the collection
  * @return { Boolean }: Function returns a boolean value indicating truthiness vs. falsiness of given values
  */
 
@@ -334,9 +334,10 @@ module.exports.some = some;
 
 
 /**
- * extend: Designed to copy properties from object(s) into another object
+ * extend: Designed to copy properties from object(s) into another object, then return the object
  * 
- * @param { Object }: Function takes in multiple objects
+ * @param { Object } collection: Function takes in a target object
+ * @param { Object(s) } collection: Function takes in one or more objects from which to copy key/value pairs
  * @return { Object }: Function returns a modified version of first given object
  */
 
@@ -346,3 +347,30 @@ function extend(object1, ...objects) {
     return object1;
 }
 module.exports.extend = extend;
+
+
+/**
+ * reduce: Designed to 
+ * 
+ * @param { Array } collection: Function takes in an array over which to iterate
+ * @param { Function } action: Function takes in a function to be applied to each value in the collection
+ * @param { Any value }: Function takes in any value as starting value of seed
+ * @return { Any value }: Function returns final value of seed or a numeric value if no seed is given
+ */
+
+_.reduce = function(collection, func, seed) {
+    let result;
+    if (seed === undefined) {
+        result = collection[0];
+        for (let i = 1; i < collection.length; i++) {
+            result = func(result, collection[i], i, collection);
+        }
+    } else {
+        result = seed;
+        for (let i = 0; i < collection.length; i++) {
+            result = func(result, collection[i], i, collection);
+        }
+    }
+    return result;
+}
+module.exports.reduce = reduce;
