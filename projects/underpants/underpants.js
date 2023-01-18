@@ -512,12 +512,53 @@ _.some = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+// designed to accumulate some return value
+// 1st thing it figures out is whether there is a seed value
+// so like result = 0 (first iteration)
+// iterates
+// result = func(result, currentVal, currentIndex, collection)
+// ^ called reducer function
+// thing that accumulates value
+// returns whatever has been passed in (modified however you wan, so can add currentval to result)
+// then it loops again after result has been added to
+// returns final value of result   
+// always have to give result var some starting point
+// seed value can be any piece of data
+
+// func(accumulator, current...)
+
+// declare variable result
+// if seed undefined...
+// result brackt 0
+// create for loop has to begin at 1 index
+// assigning seed value is 
+// else
+// result equals seed
+// for loop
+// redefine result to value of invoking func
+
 // if no seed, use first element/value of collection as seed and continue to next element
 // loop thru array
 // on first iteration, use value of seed as 'previous result'
 // call func for each array[i] w/ arguments of previous result, element, index
 // use return value as 'previous result' for next iteration
 // after last iteration, return the return value of final function call
+
+_.reduce = function(collection, func, seed) {
+    let result; // create variable to hold result
+    if (seed === undefined) { // check if seed was given
+        result = collection[0]; // if so, set result to first element of collection
+        for (let i = 1; i < collection.length; i++) { // loop thru collection
+            result = func(result, collection[i], i, collection); // reassign result to the value of the function call
+        }
+    } else { // if seed was given,
+        result = seed; // set starting count to value of seed
+        for (let i = 0; i < collection.length; i++) { // loop thru collection
+            result = func(result, collection[i], i, collection); // reassign result to the value of the function call
+        }
+    }
+    return result; // return result
+}
 
 // _. reduce = function(array, func, seed) {
 //     let result = seed;
