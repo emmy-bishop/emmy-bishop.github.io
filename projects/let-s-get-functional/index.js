@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require('underbar');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -16,22 +16,66 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER/projects/let-s-get-functional
+ *    npm start --prefix ./emmy-bishop.github.io/projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
 var maleCount = function(array) {
+    let males = _.filter(array, function(customer) { // create variable to hold array of male customer objs
+        return customer.gender === 'male' // use filter to push all male customer objs to array
+    })
+    return males.length; // return length of array
+}
 
+var femaleCount = function(array) {
+    let females = _.reduce(array, function(accumulator, current) { // create variable to hold # of female customers
+        if (current.gender === 'female') { // check if gender in given obj is female
+            return accumulator += 1; // if so add 1 to female count
+        } else { // else don't change count
+            return accumulator;
+        }
+    }, 0);
+    return females; // return female count
 };
 
-var femaleCount;
+var oldestCustomer = function(array) {
+    let oldestAge = 0; // establish variable to track age
+    let oldestPerson = {}; // create empty obj to populate with oldest person once found
+    array.reduce((accumulator, current) => { // use reduce method on array of customer objs
+        if (current.age > oldestAge) { // check if age on current obj is greater than age tracker variable
+            oldestAge = current.age; // if so, change age tracker variable to value of that age
+            oldestPerson = current; // and populate obj with info from the person's customer obj
+        }
+        return accumulator; // return accumulator
+    });
+    return oldestPerson.name; // return name of oldest customer
+};
 
-var oldestCustomer;
+var youngestCustomer = function(array) {
+    let youngestAge = 150;
+    let youngestPerson = {};
+    array.reduce((accumulator, current) => {
+        if (current.age < youngestAge) {
+            youngestAge = current.age;
+            youngestPerson = current;
+        }
+        return accumulator;
+    });
+    return youngestPerson.name;
+};
 
-var youngestCustomer;
-
-var averageBalance;
+var averageBalance = function(array) {
+    let total = 0;
+    let balances = array.filter(array, function(customer) {
+        customer.balance !== undefined;
+    });
+    for (let i = 0; i < balances.length; i++) {
+        total += balances[i];
+    }
+    total /= balances.length;
+    return total;
+};
 
 var firstLetterCount;
 
