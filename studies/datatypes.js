@@ -41,6 +41,8 @@ console.log(squirrelCount); // prints => 5
 var squirrelName = 'Acorn'; // initializes variable to the value of a string
 console.log(squirrelName); // prints => Acorn
 var squirrelName = Acorn; // prints => ReferenceError: Acorn is not defined at Object
+// Strings have built-in methods
+console.log(squirrelName.length);
 
 // 3 Boolean //
 
@@ -130,7 +132,68 @@ console.log(impossibleOperation); // prints => NaN
 
 // 10 Infinity and -Infinity
 
+// Infinity represents a value that is greater than any other number
+var biggestNumber = Infinity; // initializes variable with value of infinity
+console.log(biggestNumber); // prints => Infinity
+console.log(biggestNumber + 1) // prints => Infinity
+// -Infinity represents a value that is smaller than any other number
+var smallestNumber = -Infinity;
+console.log(smallestNumber); // prints => -Infinity
+console.log(smallestNumber / 1000) // prints => -Infinity
 
+// 11 Simple vs. Complex Data Types //
+
+// 1. Simple Data Types:
+// Numbers
+// Strings
+// Booleans
+// Undefined
+// Null
+// NaN
+
+// Simple data types are atomic
+// This means they exist in and of themselves--a simple data type cannot hold another simple data type
+// Simple data types are immutable
+// This means once they are created, they may be reassigned but never directly changed
+var myAge = 26; // initializes variable with value of 26
+myAge += 1; // reassigns variable to value of adding 26 + 1
+console.log(myAge); // prints => 27
+
+// 2. Complex Data Types:
+// Arrays
+// Objects
+// Functions
+
+// Complex data types collect other values
+// Because they collect other values, complex data types are of an indefinite size
+// Complex data types are mutable
+// This means once they are created, they may be directly changed
+var rodents = ['gerbil', 'hamster', 'rat']; // initializes rodents variable
+rodents[rodents.length - 1] = 'capybara'; // changes last value to capybara
+console.log(rodents); // prints => ['gerbil', 'hamster', 'capybara']
+
+// 12 Copy by Value vs. Copy by Reference //
+
+// 1. Copy by Value
+// Simple data types are copied by value
+var z = 26; // initializes variable
+var y = z; // initializes variable to value of previous variable
+y = 25; // reassigns value of variable
+console.log(y); // prints => 25
+// Because numbers are simple data types and simple data types are copied by value, changing the value stored in y did not affect the value stored in z
+console.log(z); // prints => 26
+
+// 2. Copy by Reference
+// Complex data types are copied by reference
+var bear = {
+  type: 'sun'
+};
+var bearContainer = bear; // assigns variable to value of bear object
+// Both bear and bearContainer now point to the same object
+console.log(bearContainer); // prints => { type: 'sun' }
+bearContainer.type = 'panda'; // reassigns type of bearContainer
+// Because objects are complex data types and complex data types are copied by reference, changing the value stored in bearContainer DID affect the value of bear
+console.log(bear); // prints => { type: 'panda' }
 
 
 
