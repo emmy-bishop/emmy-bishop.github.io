@@ -126,7 +126,17 @@ var topThreeTags = function(array) {
   return mostCommon;
 };
 
-var genderCount;
+var genderCount = function(array) {
+  let allGens = [];
+  array.forEach(function(customer) {
+    return customer.gender ? allGens.push(customer.gender) : null;
+  })
+  let reduced = allGens.reduce(function(accumulator, gender) {
+    accumulator[gender] ? accumulator[gender]++ : accumulator[gender] = 1;
+    return accumulator;
+  }, {})
+  return reduced;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
