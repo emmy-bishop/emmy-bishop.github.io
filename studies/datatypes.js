@@ -103,6 +103,32 @@ console.log(findSum(2, 3)); // prints => 5
 
 // 7 Undefined //
 
+// Variables that have been declared, but not assigned values, will resolve to a value of undefined
+var myVariable; // declares variable
+console.log(myVariable); // prints => undefined
+myVariable = ''; // reassigns variable to value of an empty string
+console.log(myVariable); // prints =>        
+// Functions will return undefined whenever a return statement is omitted
+function findProduct(num1, num2) {
+  num1 * num2;
+}; // declares function
+console.log(findProduct(3, 4)); // prints => undefined
+
+// 8 null //
+
+// Represents the intentional absence of a value
+var mySanity = null; // declares variable with value of null
+console.log(mySanity); // prints => null
+
+// 9 NaN //
+
+// Represents a failed operation on numbers
+var addUndefined = 2 + undefined; // initializes variable to value of a number plus undefined
+console.log(addUndefined); // prints => NaN
+var impossibleOperation = 0 / 0; // initializes variable to value of zero divided by zero
+console.log(impossibleOperation); // prints => NaN
+
+// 10 Infinity and -Infinity
 
 
 
