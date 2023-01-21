@@ -66,22 +66,47 @@ var youngestCustomer = function(array) {
 };
 
 var averageBalance = function(array) {
-    let total = 0;
-    let balances = array.filter(array, function(customer) {
-        customer.balance !== undefined;
+    let mapped = array.map(function(customer) {
+      return parseFloat(customer.balance.slice(1, 2) + customer.balance.slice(3));
     });
-    for (let i = 0; i < balances.length; i++) {
-        total += balances[i];
-    }
-    total /= balances.length;
-    return total;
-};
+    console.log(mapped);
+    let sum = 0;
+    mapped.forEach(function(amount) {
+      sum += amount;
+    })
+    return sum / mapped.length;
+  }
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter) {
+    let filtered = array.filter(function(customer) {
+      return customer.name[0].toLowerCase() === letter.toLowerCase();
+    });
+    return filtered.length;
+  };
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter) {
+    let matches = 0;
+     array.forEach(function(element) {
+       if (element.name === customer) {
+      element.friends.forEach(function(friend) {
+        return friend.name[0].toLowerCase() === letter.toLowerCase() ? matches++ : matches += 0
+      })
+     }
+    })
+    return matches;
+  };
 
-var friendsCount;
+var friendsCount = function(array, name) {
+    let matches = [];
+    array.forEach(function(person) {
+      person.friends.forEach(function(friend) {
+        if (friend.name.toLowerCase() === name.toLowerCase()) {
+          matches.push(person.name);
+        }
+      })
+    })
+    return matches;
+  };
 
 var topThreeTags;
 
