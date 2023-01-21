@@ -44,7 +44,7 @@ var squirrelName = Acorn; // prints => ReferenceError: Acorn is not defined at O
 
 // 3 Boolean //
 
-// Boolean values are used to represent true vs. false
+// Booleans are used to represent true vs. false values
 // Unlike strings, booleans do not need to be wrapped in quotation marks
 var isStudent = true; // initializes variable to a boolean value
 console.log(isStudent); // prints => true;
