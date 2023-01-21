@@ -97,16 +97,16 @@ var friendFirstLetterCount = function(array, customer, letter) {
   };
 
 var friendsCount = function(array, name) {
-    let matches = [];
-    array.forEach(function(person) {
-      person.friends.forEach(function(friend) {
-        if (friend.name.toLowerCase() === name.toLowerCase()) {
-          matches.push(person.name);
-        }
-      })
+  let matches = [];
+  array.forEach(function(person) {
+    person.friends.forEach(function(friend) {
+      if (friend.name === name) {
+        matches.push(person.name);
+      }
     })
-    return matches;
-  };
+  })
+  return matches;
+}
 
 var topThreeTags;
 
