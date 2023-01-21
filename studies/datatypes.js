@@ -41,8 +41,18 @@ console.log(squirrelCount); // prints => 5
 var squirrelName = 'Acorn'; // initializes variable to the value of a string
 console.log(squirrelName); // prints => Acorn
 var squirrelName = Acorn; // prints => ReferenceError: Acorn is not defined at Object
-// Strings have built-in methods
-console.log(squirrelName.length);
+// Strings have built-in properties and methods
+// Length property
+console.log(squirrelName.length); // prints => 5
+// Slice method 'slices' part of a string at specified locations and returns sliced section
+console.log(squirrelName.slice(0, 3)) // prints => Aco
+// toLowerCase and toUpperCase change the case of a given string
+console.log(squirrelName.toLowerCase()); // prints => acorn
+console.log(squirrelName.toUpperCase()); // prints => ACORN
+// Replace method replaces the first instance of a specified value with another value
+console.log(squirrelName.replace('A', 'B')); // prints => Bcorn
+// Concat method joins string with another string
+console.log(squirrelName.concat('enjoyer')); // prints => Acornenjoyer
 
 // 3 Boolean //
 
