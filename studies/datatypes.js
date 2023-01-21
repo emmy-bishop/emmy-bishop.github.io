@@ -29,10 +29,25 @@
  * 12: Copy by Value vs. Copy by Reference
  */
 
-// 1 Numbers //
+// 1 Number //
 
+// Numbers can be assigned to variables directly, without the use of quotation marks
 var squirrelCount = 5; // initializes variable to the value of a number
-console.log(squirrelCount) // prints => 5
+console.log(squirrelCount); // prints => 5
+
+// 2 String //
+
+// However, strings must be wrapped in quotation marks in order for the JavaScript interpreter to parse their values
+var squirrelName = 'Acorn'; // initializes variable to the value of a string
+console.log(squirrelName); // prints => Acorn
+var squirrelName = Acorn; // prints => ReferenceError: Acorn is not defined at Object
+
+// 3 Boolean //
+
+// Boolean values are used to represent true vs. false
+// Unlike strings, booleans do not need to be wrapped in quotation marks
+var isStudent = true; // initializes variable to a boolean value
+console.log(isStudent); // prints => true;
 
 
 
