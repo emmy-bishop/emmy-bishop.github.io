@@ -66,16 +66,16 @@ var youngestCustomer = function(array) {
 };
 
 var averageBalance = function(array) {
-    let mapped = array.map(function(customer) {
-      return parseFloat(customer.balance.slice(1, 2) + customer.balance.slice(3));
-    });
-    console.log(mapped);
-    let sum = 0;
-    mapped.forEach(function(amount) {
-      sum += amount;
-    })
-    return sum / mapped.length;
-  }
+  let mapped = array.map(function(customer) {
+    return parseFloat(customer.balance.replace(/[$, \,]/g, ''));
+  });
+  console.log(mapped);
+  let sum = 0;
+  mapped.forEach(function(amount) {
+    sum += amount;
+  })
+  return sum / mapped.length;
+}
 
 var firstLetterCount = function(array, letter) {
     let filtered = array.filter(function(customer) {
