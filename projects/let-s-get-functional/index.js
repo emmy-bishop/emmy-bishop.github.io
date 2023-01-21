@@ -108,7 +108,23 @@ var friendsCount = function(array, name) {
   return matches;
 }
 
-var topThreeTags;
+var topThreeTags = function(array) {
+  let tagArray = []; // create array to hold all tags
+  array.forEach(function(customer) { // call function once for each customer obj
+    customer.tags.reduce(function(accumulator, tag) { // use reduce to push tags into array
+      tagArray.push(tag);
+    }, 0)
+  })
+  let counts = tagArray.reduce(function(obj, tag) { 
+    return obj[tag] ? obj[tag]++ : obj[tag] = 1, obj;
+  }, {});
+  let maxCount = Math.max(...Object.values(counts));
+  console.log(maxCount);
+  let mostCommon = Object.keys(counts).filter(function(el) {
+    return counts[el] === maxCount;
+  })
+  return mostCommon;
+};
 
 var genderCount;
 
