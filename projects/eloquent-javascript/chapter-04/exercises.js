@@ -6,13 +6,14 @@
 // set base case to start === end
 // call function again with args of start + step, end, step
 
+var numbers = [];
+
 function range(start, end, step = 1) {
-  let numbers = [];
   if (start === end) {
+    numbers.push(end);
     return numbers;
-  } else {
-    numbers.push(start);
   }
+  numbers.push(start);
   return range(start + step, end, step);
 }
 
