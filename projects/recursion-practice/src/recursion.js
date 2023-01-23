@@ -53,7 +53,7 @@ var sumBelow = function(n) {
   if (n === 0) { // check if n is 0
     return 0; // if so return 0
   } else if (n > 0) { // check if n is greater than 0
-    n--;// if so subtract 1 from n
+    n--; // if so subtract 1 from n
     return n + sumBelow(n); // and return sum of new value of n plus result of invoking func on n
   } else { // else n is negative
     n++; // if so add 1 to n
@@ -67,14 +67,19 @@ var range = function(x, y, output = []) {
   if (x === y || x - y === 1 || y - x === 1) {
     return output;
   } if (x < y && x >= 0 && y >= 0) {
+    x++;
     output.push(x);
-    return range(x + 1, y, output);
-  } else if (y < x && x >= 0 && y >= 0) {
+    return range(x, y, output);
+  } if (y < x && x >= 0 && y >= 0) {
+    output.push(x);
     x--;
+    return range(x, y, output);
+  } else { // else nums are neg?
+    x++;
     output.push(x);
     return range(x, y, output);
   }
-  return output;
+  
 };
 
 // 7. Compute the exponent of a number.
@@ -83,6 +88,7 @@ var range = function(x, y, output = []) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+
 };
 
 // 8. Determine if a number is a power of two.
