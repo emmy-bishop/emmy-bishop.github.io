@@ -6,14 +6,20 @@
 // set base case to start === end
 // call function again with args of start + step, end, step
 
-var numbers = [];
 
 function range(start, end, step = 1) {
-  if (start === end) {
-    return numbers;
+  let numbers = []; // create array to hold range
+  if (start === end) { // check if start is already equal to end
+    return numbers; // if so return empty array
   }
-  numbers.push(start);
-  return range(start + step, end, step);
+  if (step >= 0) { // check if step is 0 or greater
+    for (let i = start; i <= end; i += step) { // if so loop thru numbers incrementing by step each time
+      numbers.push(i); // push each value into array
+    }
+  } else if (step < 0) { // check if step is negative
+    return numbers; // if so return empty array
+  }
+  return numbers; // return array populated with range
 }
 
 ////////////////////////////////////////////////////////////////////////////////
