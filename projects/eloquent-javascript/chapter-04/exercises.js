@@ -2,8 +2,18 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
+// create array to populate with numbers
+// set base case to start === end
+// call function again with args of start + step, end, step
 
+function range(start, end, step = 1) {
+  let numbers = [];
+  if (start === end) {
+    return numbers;
+  } else {
+    numbers.push(start);
+  }
+  return range(start + step, end, step);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
