@@ -52,18 +52,29 @@ var isEven = function(n) {
 var sumBelow = function(n) {
   if (n === 0) { // check if n is 0
     return 0; // if so return 0
-  } else if (n > 0) { // check if n is less than 0
-    n--; // if so subtract 1 from n
+  } else if (n > 0) { // check if n is greater than 0
+    n--;// if so subtract 1 from n
     return n + sumBelow(n); // and return sum of new value of n plus result of invoking func on n
   } else { // else n is negative
-    n++; // so add 1 to n
+    n++; // if so add 1 to n
     return n + sumBelow(n); // and return sum of new value of n plus result of invoking func on n
   }
 };
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, output = []) {
+  if (x === y || x - y === 1 || y - x === 1) {
+    return output;
+  } if (x < y && x >= 0 && y >= 0) {
+    output.push(x);
+    return range(x + 1, y, output);
+  } else if (y < x && x >= 0 && y >= 0) {
+    x--;
+    output.push(x);
+    return range(x, y, output);
+  }
+  return output;
 };
 
 // 7. Compute the exponent of a number.
