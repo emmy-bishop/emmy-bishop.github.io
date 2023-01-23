@@ -71,8 +71,8 @@ var range = function(x, y, output = []) {
     output.push(x);
     return range(x, y, output);
   } if (y < x && x >= 0 && y >= 0) {
-    output.push(x);
-    x--;
+    y++;
+    output.unshift(y);
     return range(x, y, output);
   } else { // else nums are neg?
     x++;
