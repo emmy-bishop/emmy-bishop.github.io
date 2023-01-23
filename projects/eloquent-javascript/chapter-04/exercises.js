@@ -10,7 +10,6 @@ var numbers = [];
 
 function range(start, end, step = 1) {
   if (start === end) {
-    numbers.push(end);
     return numbers;
   }
   numbers.push(start);
