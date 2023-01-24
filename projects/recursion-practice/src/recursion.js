@@ -66,9 +66,11 @@ var sumBelow = function(n) {
 var range = (x, y, output = []) => {
   if (x === y) { // check if x is equal to y
     return output; // if so return output array
-  } if (x === y - 1) { // check if x is almost equal to y (in order to exclude starting/ending values)
+  } 
+  if (x === y - 1) { // check if x is almost equal to y (in order to exclude starting/ending values)
     return output; // if so return output array
-  } if (y === x - 1) { // check if y is almost equal to x
+  } 
+  if (y === x - 1) { // check if y is almost equal to x
     return output; // if so return output array
   }
   if (x < y) { // check if x is less than y
@@ -90,7 +92,15 @@ var range = (x, y, output = []) => {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
-
+  if (exp === 0) { // check if exp is 0
+    return 1; // if so return 1
+  } 
+  if (exp > 0) { // check if exp is positive
+    return base * exponent(base, exp - 1); // if so return base multiplied by result of calling func w/ args of base, exp - 1
+  }
+  if (exp < 0) { // check if exp is negative
+    return 1 / exponent(base, -exp); // if so return inverse of result of calling func w/ args of base and negative exp
+  }
 };
 
 // 8. Determine if a number is a power of two.
