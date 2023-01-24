@@ -63,24 +63,26 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y, output = []) {
-  if (x === y || x - y === 1 || y - x === 1) {
-    return output;
-  } if (x < y && x >= 0 && y >= 0) {
-    x++;
-    output.push(x);
-    return range(x, y, output);
-  } if (y < x && x >= 0 && y >= 0) {
-    y++;
-    output.unshift(y);
-    return range(x, y, output);
-  } else { // else nums are neg?
-    x++;
-    output.push(x);
-    return range(x, y, output);
+var range = (x, y, output = []) => {
+  if (x === y) { // check if x is equal to y
+    return output; // if so return output array
+  } if (x === y - 1) { // check if x is almost equal to y (in order to exclude starting/ending values)
+    return output; // if so return output array
+  } if (y === x - 1) { // check if y is almost equal to x
+    return output; // if so return output array
   }
+  if (x < y) { // check if x is less than y
+    x++; // if so increment x
+    output.push(x); // then push x into output array
+    return range(x, y, output); // return result of calling function again
+  }
+  if (y < x) { // check if y is less than x
+    x--; // if so decrement x
+    output.push(x); // then push x into output array
+    return range(x, y, output); // return result of calling function again
+  }
+}
   
-};
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
