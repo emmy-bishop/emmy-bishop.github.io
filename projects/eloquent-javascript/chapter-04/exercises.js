@@ -76,8 +76,13 @@ function arrayToList(array) {
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(obj, output = []) {
+  if (obj.rest === null) { // check if obj's rest property is null
+    output.push(obj.value); // if so push obj value into output array
+    return output; // and return output
+  }
+  output.push(obj.value); // otherwise push value into output array
+  return listToArray(obj, output); // and return result of calling func again
 }
 
 ////////////////////////////////////////////////////////////////////////////////
