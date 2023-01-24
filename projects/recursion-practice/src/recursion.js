@@ -28,10 +28,10 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
-  if (array.length === 1) {
-    return array[0];
+  if (array.length === 1) { // check if array length is 1
+    return array[0]; // if so return value in array
   }
-  return array[0] + arraySum(array.slice(1));
+  return array[0] + arraySum(array.slice(1)); // otherwise return value in array plus result of invoking func on rest of array
 };
 
 // 4. Check if a number is even.
@@ -208,11 +208,11 @@ var createArray = function(str, output = []){
 
 // 17. Reverse the order of an array
 var reverseArr = function (array, output = []) {
-  if (array.length === 0) {
-    return output;
+  if (array.length === 0) { // check if array length is 0
+    return output; // if so return output
   }
-  output.push(array[array.length - 1]);
-  return reverseArr(array.slice(0, array.length - 1), output);
+  output.push(array[array.length - 1]); // push each last value into output array
+  return reverseArr(array.slice(0, array.length - 1), output); // return result of calling func again on rest of array
 };
 
 // 18. Create a new array with a given value and length.
