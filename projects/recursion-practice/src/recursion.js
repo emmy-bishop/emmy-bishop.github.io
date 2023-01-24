@@ -212,7 +212,7 @@ var reverseArr = function (array, output = []) {
     return output;
   }
   output.push(array[array.length - 1]);
-  return reverseArr(array.slice(array.length - 1, 1), output);
+  return reverseArr(array.slice(0, array.length - 1), output);
 };
 
 // 18. Create a new array with a given value and length.
