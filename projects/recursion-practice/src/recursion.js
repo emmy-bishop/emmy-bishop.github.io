@@ -108,6 +108,13 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  if (n === 1) { // check if n equals 1, meaning the number given IS a power of 2
+    return true; // if so return true
+  } 
+  if (n === 0) { // check if n equals 0, meaning the number given IS NOT a power of 2
+    return false; // if so return false
+  }
+  return powerOfTwo(n / 2); // else return result of calling func w/ arg of n divided by 2
 };
 
 // 9. Write a function that accepts a string a reverses it.
