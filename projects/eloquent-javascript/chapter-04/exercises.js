@@ -27,13 +27,13 @@ function range(start, end, step = 1) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function sum(arr) {
-  if (arr.length === 0) {
-    return 0;
+  if (arr.length === 0) { // check if array is empty
+    return 0; // if so return 0
   }
-  if (arr.length === 1) {
-    return arr[0];
+  if (arr.length === 1) { // check if array has one element left
+    return arr[0]; // if so return that element
   }
-  return arr[0] + sum(arr.slice(1));
+  return arr[0] + sum(arr.slice(1)); // otherwise return sum of current element plus result of invoking function on rest of array
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -41,11 +41,11 @@ function sum(arr) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function reverseArray(arr) {
-  let reversed = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    reversed.push(arr[i]);
+  let reversed = []; // create holder array
+  for (let i = arr.length - 1; i >= 0; i--) { // loop thru array in reverse
+    reversed.push(arr[i]); // push each value to holder
   }
-  return reversed;
+  return reversed; // return holder
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -53,8 +53,8 @@ function reverseArray(arr) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function reverseArrayInPlace(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    arr.splice(i, 0, arr.pop());
+  for (let i = 0; i < arr.length; i++) { // loop thru array
+   arr.splice(i, 0, arr.pop()); // set current val of i to last element in array on each iteration
   }
 }
 
