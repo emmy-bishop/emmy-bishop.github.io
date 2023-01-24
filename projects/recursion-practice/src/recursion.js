@@ -170,7 +170,7 @@ var multiply = function(x, y) {
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
 var divide = function(x, y) {
-  
+
 };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers.  The GCD of two
@@ -187,6 +187,13 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  if (str1.length === 0 && str2.length === 0) { // check if both strings have zero length meaning all letters matched
+    return true; // if so return true
+  }
+  if (str1[0] === str2[0]) { // check if each letter in string1 matches each letter in string2
+    return compareStr(str1.slice(1), str2.slice(1)); // if so return result of calling func on rest of strings
+  }
+  return false; // if entire function was enacted and conditions were not met, that means strings were not identical so return false
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
