@@ -148,12 +148,29 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
+// check if x or y is 0
+// if so product will be 0, so return 0
+// check if x is positive
+// if so return result of adding y plus invoking function with x decremented
+// check if x is negative
+// if so return negative result of invoking function with x decremented
+
 var multiply = function(x, y) {
+  if (x === 0 || y === 0) {
+    return 0;
+  }
+  if (x > 0) {
+    return y + multiply(x - 1, y);
+  }
+  if (x < 0) {
+    return -multiply(-x, y);
+  }
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
 var divide = function(x, y) {
+  
 };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers.  The GCD of two
