@@ -255,6 +255,7 @@ var rMap = function(array, callback, output = []) {
 // countKeysInObj(testobj, 'r') // 1
 // countKeysInObj(testobj, 'e') // 2
 var countKeysInObj = function(obj, key) {
+
 };
 
 // 22. Write a function that counts the number of times a value occurs in an object.
@@ -275,6 +276,7 @@ var replaceKeysInObj = function(obj, key, newKey) {
 // fibonacci(5);  // [0, 1, 1, 2, 3, 5]
 // Note:  The 0 is not counted.
 var fibonacci = function(n) {
+
 };
 
 // 25. Return the Fibonacci number located at index n of the Fibonacci sequence.
@@ -282,13 +284,26 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n) {
-};
+var nthFibo = function(n, output = [0, 1]) {
+  if (n < 0) { // check if n is negative
+    return null; // if so return null
+  }
+  if (n === 0) { // check if n is 0
+    return output[0]; // if so return first item in output array
+  }
+  output.push(output[0] + output[1]); // push sum of first and second items in output array to output array
+  return nthFibo(n - 1, output.slice(1)); // return result of calling func on decremented n and rest of array
+}
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, output = []) {
+  if (input.length === 0) { // check if length of input array is 0 
+    return output; // if so return output
+  }
+  output.push(input[0].toUpperCase()); // push each capitalized word into output array
+  return capitalizeWords(input.slice(1), output); // return result of calling func on rest of array
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
