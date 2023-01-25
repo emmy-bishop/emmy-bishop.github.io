@@ -125,11 +125,11 @@ var topThreeTags = function(array) {
 };
 
 var genderCount = function(array) {
-  let allGens = []; // create array to hold customer genders
+  let customerGenders = []; // create array to hold customer genders
   array.forEach(function(customer) { // call function on each item in input array
-    return customer.gender ? allGens.push(customer.gender) : null; // if customer gender exists, push it to gender array
+    return customer.gender ? customerGenders.push(customer.gender) : null; // if customer gender exists, push it to gender array
   })
-  let reduced = allGens.reduce(function(accumulator, gender) { // use reduce on gender array
+  let reduced = customerGenders.reduce(function(accumulator, gender) { // use reduce on gender array
     accumulator[gender] ? accumulator[gender]++ : accumulator[gender] = 1; // change or establish gender count for each gender
     return accumulator; // return object with gender stats
   }, {})
