@@ -53,59 +53,58 @@ var oldestCustomer = function(array) {
 };
 
 var youngestCustomer = function(array) {
-    let youngestAge = 150;
-    let youngestPerson = {};
-    array.reduce((accumulator, current) => {
-        if (current.age < youngestAge) {
-            youngestAge = current.age;
-            youngestPerson = current;
+    let youngestAge = 150; // establish variable to track age
+    let youngestPerson = {}; // create empty obj to populate w/ youngest person's info
+    array.reduce((accumulator, current) => { // use reduce on array of customer objs
+        if (current.age < youngestAge) { // check if current customer's age is less than current value of age tracker variable
+            youngestAge = current.age; // if so, change age tracker variable to value of that age
+            youngestPerson = current; // and populate obj w/ info from the person's customer obj
         }
-        return accumulator;
+        return accumulator; // return accumulator
     });
-    return youngestPerson.name;
+    return youngestPerson.name; // return name of youngest customer
 };
 
 var averageBalance = function(array) {
-  let mapped = array.map(function(customer) {
-    return parseFloat(customer.balance.replace(/[$, \,]/g, ''));
+  let mapped = array.map(function(customer) { // map thru given array
+    return parseFloat(customer.balance.replace(/[$, \,]/g, '')); // push each customer balance into new array after removing special characters and converting from string to number
   });
-  console.log(mapped);
-  let sum = 0;
-  mapped.forEach(function(amount) {
-    sum += amount;
+  let sum = 0; // establish sum variable
+  mapped.forEach(function(amount) { // use foreach on new array
+    sum += amount; // add balance to sum variable
   })
-  return sum / mapped.length;
+  return sum / mapped.length; // return average of all balances
 }
 
 var firstLetterCount = function(array, letter) {
-    let filtered = array.filter(function(customer) {
-      return customer.name[0].toLowerCase() === letter.toLowerCase();
+    let filtered = array.filter(function(customer) { // filter given array
+      return customer.name[0].toLowerCase() === letter.toLowerCase(); // push names of customers that start with given letter to new array
     });
-    return filtered.length;
+    return filtered.length; // return number of entries in array
   };
 
 var friendFirstLetterCount = function(array, customer, letter) {
-    let matches = 0;
-     array.forEach(function(element) {
-       if (element.name === customer) {
-      element.friends.forEach(function(friend) {
-        return friend.name[0].toLowerCase() === letter.toLowerCase() ? matches++ : matches += 0
+    let matches = 0; // establish variable to keep track of matches found
+     array.forEach(function(element) { // call function on each element in given array
+       if (element.name === customer) { // check if name in obj matches given customer name
+        element.friends.forEach(function(friend) { // call function on each friend
+        return friend.name[0].toLowerCase() === letter.toLowerCase() ? matches++ : matches += 0 // add to matches variable if match is found
       })
      }
     })
-    return matches;
+    return matches; // return number of matches found
   };
 
 var friendsCount = function(array, name) {
-  let matches = [];
-  array.forEach(function(person) {
-    person.friends.forEach(function(friend) {
-      if (friend.name === name) {
-        matches.push(person.name);
+  let matches = []; // create matches array
+  array.forEach(function(customer) { // call function on each person in given array
+    customer.friends.forEach(function(friend) { // call function on each friend 
+      if (friend.name === name) { // check if friend name equals input name
+        matches.push(customer.name); // if so push customer name into matches array
       }
     })
   })
-  return matches;
+  return matches; // return matches
 }
 
 var topThreeTags = function(array) {
@@ -115,27 +114,26 @@ var topThreeTags = function(array) {
       tagArray.push(tag);
     }, 0)
   })
-  let counts = tagArray.reduce(function(obj, tag) { 
-    return obj[tag] ? obj[tag]++ : obj[tag] = 1, obj;
+  let counts = tagArray.reduce(function(obj, tag) { // create object to keep track of number of times each tag occurs
+    return obj[tag] ? obj[tag]++ : obj[tag] = 1, obj; // check if tag already exists within object, if so add 1 to its value, if not initialize it w/ value of 1. return accumulator
   }, {});
-  let maxCount = Math.max(...Object.values(counts));
-  console.log(maxCount);
-  let mostCommon = Object.keys(counts).filter(function(el) {
-    return counts[el] === maxCount;
+  let maxCount = Math.max(...Object.values(counts)); // create maxcount variable and set it to the maximum value contained within object
+  let mostCommon = Object.keys(counts).filter(function(el) { // create mostcommon variable, populate it with keys from object, and filter through those keys
+    return counts[el] === maxCount; // populate array with only the keys whose values resolve to maxcount, which is 3
   })
-  return mostCommon;
+  return mostCommon; // return array containing the most common tags
 };
 
 var genderCount = function(array) {
-  let allGens = [];
-  array.forEach(function(customer) {
-    return customer.gender ? allGens.push(customer.gender) : null;
+  let allGens = []; // create array to hold customer genders
+  array.forEach(function(customer) { // call function on each item in input array
+    return customer.gender ? allGens.push(customer.gender) : null; // if customer gender exists, push it to gender array
   })
-  let reduced = allGens.reduce(function(accumulator, gender) {
-    accumulator[gender] ? accumulator[gender]++ : accumulator[gender] = 1;
-    return accumulator;
+  let reduced = allGens.reduce(function(accumulator, gender) { // use reduce on gender array
+    accumulator[gender] ? accumulator[gender]++ : accumulator[gender] = 1; // change or establish gender count for each gender
+    return accumulator; // return object with gender stats
   }, {})
-  return reduced;
+  return reduced; // return object with gender stats
 };
 
 //////////////////////////////////////////////////////////////////////
