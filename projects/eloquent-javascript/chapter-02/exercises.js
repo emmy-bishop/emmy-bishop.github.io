@@ -4,10 +4,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(rows) {
-  var count = '';
-  for (var i = 0; i < rows; i++) {
-    count += '#';
-    console.log(count);
+  var count = ''; // establish variable to hold string
+  for (var i = 0; i < rows; i++) { // loop for given number of rows
+    count += '#'; // add hashtag to variable at each iteration
+    console.log(count); // console log result
   }
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -15,14 +15,14 @@ function triangles(rows) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  for (var i = 1; i <= 15; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      console.log('fizzbuzz');
-    } else if (i % 3 === 0) {
-      console.log('fizz');
-    } else if (i % 5 === 0) {
-      console.log('buzz');
-    } else {
+  for (var i = 1; i <= 15; i++) { // loop to print numbers 1-15
+    if (i % 3 === 0 && i % 5 === 0) { // check if num is divisible by 3 and 5
+      console.log('fizzbuzz'); // if so print fizzbuzz
+    } else if (i % 3 === 0) { // check if num is divisible by 3
+      console.log('fizz'); // if so print fizz
+    } else if (i % 5 === 0) { // check if num is divisible by 5
+      console.log('buzz'); // if so print buzz
+    } else { // else print num
       console.log(i);
     }
   }
