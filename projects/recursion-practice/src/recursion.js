@@ -219,13 +219,25 @@ var reverseArr = function (array, output = []) {
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length, output = []) {
-  
+  if (length === 0) { // check if length is 0 
+    return output; // if so return output
+  }
+  output.push(value); // push each value into output array
+  length--; // decrement length variable
+  return buildList(value, length, output); // return result of calling func again
 };
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
+var countOccurrence = function(array, value, output = []) {
+  if (array.length === 0) { // check if array length is zero 
+    return output.length; // if so return length of output array
+  }
+  if (array[0] === value) { // check if each value in given array matches given value
+    output.push(array[0]); // if so push value into output
+  }
+  return countOccurrence(array.slice(1), value, output); // and return result of calling func again on rest of array
 };
 
 // 20. Write a recursive version of map.
