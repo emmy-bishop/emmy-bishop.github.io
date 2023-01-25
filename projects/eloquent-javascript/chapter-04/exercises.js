@@ -65,11 +65,11 @@ function reverseArrayInPlace(arr) {
 
 
 function arrayToList(array) {
-  let list = null; // set initial value of list to null
+  let rest = null; // set initial value of list to null
   for (let i = array.length - 1; i >= 0; i--) { // loop thru array backwards
-  list = { value: array[i], rest: list }; // at each iteration, set list equal to an object w/ value equal to current element in given array and rest equal to new value of list
+  rest = { value: array[i], rest: rest }; // at each iteration, set list equal to an object w/ value equal to current element in given array and rest equal to new value of list
   }
-  return list; // return list of objects
+  return rest; // return list of objects
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -82,7 +82,7 @@ function listToArray(obj, output = []) {
     return output; // and return output
   }
   output.push(obj.value); // otherwise push value into output array
-  return listToArray(obj, output); // and return result of calling func again
+  return listToArray(obj.rest, output); // and return result of calling func again
 }
 
 ////////////////////////////////////////////////////////////////////////////////
