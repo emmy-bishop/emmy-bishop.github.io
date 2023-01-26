@@ -156,14 +156,14 @@ var modulo = function(x, y) {
 // if so return negative result of invoking function with x decremented
 
 var multiply = function(x, y) {
-  if (x === 0 || y === 0) {
-    return 0;
+  if (x === 0 || y === 0) { // check if x or y is 0
+    return 0; // if so return 0
   }
-  if (x > 0) {
-    return y + multiply(x - 1, y);
+  if (x > 0) { // check if x is positive
+    return y + multiply(x - 1, y); // if so return result of adding it to itself y times
   }
-  if (x < 0) {
-    return -multiply(-x, y);
+  if (x < 0) { // check if x is negative
+    return -multiply(-x, y); // if so call func again, making x positive and setting result of function call to negative
   }
 };
 
