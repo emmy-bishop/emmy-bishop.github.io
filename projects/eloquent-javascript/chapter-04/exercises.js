@@ -111,8 +111,29 @@ function nth(list, val, iterations = 0) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-
+function deepEqual(x, y) {
+  // determine if x and y are both not objects
+  if (typeof x !== 'object' && typeof y !== 'object') {
+    return x === y;
+  }
+  // determine if either x or y are not objects
+  if (typeof x !== 'object' || typeof y !== 'object') {
+    return false;
+  }
+  // create arrays of each items keys
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
+  // determine if the lengths aren't equal
+  if (xKeys.length !== yKeys.length) {
+    return false;
+  }
+  // iterate thru the xKeys array
+  for (let i = 0; i < xKeys.length; i++) {
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) {
+      return false;
+    }
+  }
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

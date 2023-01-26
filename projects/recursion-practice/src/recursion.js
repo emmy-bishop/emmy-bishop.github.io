@@ -409,15 +409,16 @@ var alternateSign = function(array, output = []) {
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str, output = [str.split(',')]) {
-  if (str.length === 0) {
-    return output.join(' ');
+var numToText = function(str, nums = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'], output = []) {
+  if (str.length === 0) { // check if length of string is 0
+    return output.join('').replace(/[0-9]/g, ''); // if so return output joined back into string w/ numbers cut out
   }
-  if (typeof +output[0] === 'number') {
-    output[0] = output[0].toString();
+  if (typeof(str[0] * 1 === 'number')) { // check if type of each digit is number
+    output.push(nums[str[0]]); // if so push its equivalent from nums array into output array
   }
-  return numToText(str.slice(1), output);
-};
+  output.push(str[0]); // push each letter into output array
+  return numToText(str.slice(1), nums, output); // return result of calling func on rest of string
+}
 
 // *** EXTRA CREDIT ***
 
