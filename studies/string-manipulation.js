@@ -11,10 +11,12 @@
 // 1 With Operators //
 
 // 1. Concatenation Operator
+// Adds a string to another string.
 let monkeyString = 'Bonobo' + ' ' + '(Pan paniscus)'; // concatenates three strings
 console.log(monkeyString); // prints => Bonobo (Pan paniscus)
 
 // 2. Concatenation Assignment Operator
+// Reassigns value of a string to itself plus another string.
 monkeyString += ': Initially believed to be a subspecies of chimpanzee. Oops!'; // adds to monkeyString
 console.log(monkeyString); // prints => Bonobo (Pan paniscus): Initially believed to be a subspecies of chimpanzee. Oops!
 
