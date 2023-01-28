@@ -4,29 +4,29 @@
  * 0: In JavaScript, each piece of data is of a certain type.
  * Depending on the data type, each piece of data will have different properties and requirements.
  * 
- * 1: Number
+ * 1: Number: Simple datatype representing a numerical value. Numbers can include decimals and can be used to perform mathematical operations.
  * 
- * 2: String
+ * 2: String: Simple datatype representing a text value. Strings can store words and sentences and can be manipulated in various ways.
  * 
- * 3: Boolean
+ * 3: Boolean: Simple datatype representing a true/false value. Booleans are often used to compare one value to another or as part of conditional logic.
  * 
- * 4: Array
+ * 4: Array: Complex datatype representing an array of related values. Arrays are used to store lists of information.
  * 
- * 5: Object
+ * 5: Object: Complex datatype representing a collection of key/value pairs. Objects are usually used for the purpose of storing information about one specific thing.
  * 
- * 6: Function
+ * 6: Function: A block of code that executes a particular task. Functions are reusable and can be accessed from anywhere within the global scope of the code.
  * 
- * 7: Undefined
+ * 7: Undefined: Variables that do not have values will hold a default value and type of undefined. However, not every variable that appears empty will evaluate to undefined--for example, it is possible for a variable to hold an empty string.
  * 
- * 8: null
+ * 8: null: Represents the intentional absence of a value. In contrast to undefined, null must be actively assigned.
  * 
- * 9: NaN
+ * 9: NaN: Stands for "Not A Number". Represents a value that is not a "legal" number. NaN is usually seen in the context of a failed operation on one or more numerical values.
  * 
- * 10: Infinity and -Infinity
+ * 10: Infinity and -Infinity: Numbers will evaluate to infinity or -infinity when they exceed the upper or lower limits JavaScript imposes upon numerical values.
  * 
- * 11: Simple vs. Complex Data Types
+ * 11: Simple vs. Complex Data Types: Simple datatypes refer to a single value, while complex datatypes refer to collections of related values.
  * 
- * 12: Copy by Value vs. Copy by Reference
+ * 12: Copy by Value vs. Copy by Reference: Simple datatypes are copied by value while complex datatypes are copied by reference.
  */
 
 // 1 Number //
@@ -110,7 +110,7 @@ console.log(userObject); // prints => { username: 'n00bpwn0r', age: 23, unemploy
 function findSum(num1, num2) {
   return num1 + num2;
 } // declares findSum function that will take in parameters representing 2 numbers and return their sum
-// To use functions, we call, or invoke, them, and pass in our values
+// To use functions, we call, or invoke, them and pass in our values
 console.log(findSum(2, 3)); // prints => 5
 
 // 7 Undefined //
