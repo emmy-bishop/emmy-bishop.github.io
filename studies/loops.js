@@ -55,6 +55,21 @@ for (let i = randomDudes.length - 1; i >= 0; i--) { // loops through array begin
 // i >= 0 to continue while the current index is greater than or equal to the first index (0),
 // i-- to access one element at a time
 
+// 3. For-In Loop
+// For-in loops are used to access objects
+let myObject = { // creates object
+    name: 'Object X',
+    age: 'ageless',
+    scrutability: 'inscrutable'
+}
+for (let key in myObject) { // loops through object
+    console.log(`My ${key} is ${myObject[key]}`); // logs message to console at each iteration
+} // prints => My name is Object X
+//             My age is ageless
+//             My scrutability is inscrutable
+
+
+
 
  
 
