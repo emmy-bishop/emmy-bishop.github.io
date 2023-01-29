@@ -82,6 +82,8 @@ for (let i = randomDudes.length - 1; i >= 0; i--) { // loops through array begin
 // i >= 0 to continue while the current index is greater than or equal to the first index (0),
 // i-- to access one element at a time
 
+// Loop Over an Array //
+
 
 
 
