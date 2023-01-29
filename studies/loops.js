@@ -30,10 +30,20 @@ while (hour < 8) { // loops while hour is less than 8
 // 2. For Loop
 // For loops continue to execute the defined code as long as a certain condition remains false
 // Typically used to iterate over arrays
-let seattlePosse = ['Frasier Crane', 'Niles Crane', 'Martin Crane', 'Roz Doyle', 'Daphne Moon'];
-for (let i = 0; i < seattlePosse.length; i++) {
-    
-}
+let seattlePosse = ['Frasier', 'Niles', 'Martin', 'Daphne', 'Roz']; // creates array
+for (let i = 0; i < seattlePosse.length; i++) { // loops through array
+    if (seattlePosse[i] === 'Eddie') { // checks if each element is equal to Eddie
+        console.log('Good boy'); // this code will not run
+    }
+    else { 
+        console.log('All humans here'); // this code will run
+    }
+} // prints => 'All humans here'
+// Above, we use a for loop to iterate through the given array under the following conditions:
+// let i = 0 to start at the first element (index 0),
+// i < seattlePosse.length to continue while the current index is less than the length of the entire array,
+// i++ to access one element at a time
+// The code under the else statement ran because we chose to loop through the whole array, each time evaluating a condition that ended up resolving to false
 
 
 
