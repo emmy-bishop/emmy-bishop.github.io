@@ -31,29 +31,14 @@ while (hour < 8) { // loops while hour is less than 8
 // For loops continue to execute the defined code as long as a certain condition remains false
 // Typically used to iterate over arrays
 let seattlePosse = ['Frasier', 'Niles', 'Martin', 'Daphne', 'Roz']; // creates array
-for (let i = 0; i < seattlePosse.length; i++) { // loops through array beginning at first element
+for (let i = 0; i < seattlePosse.length; i++) { // loops through array
     if (seattlePosse[i] === 'Eddie') { // checks each element against condition
         console.log('Good boy'); // this code will not run
     }
     else { 
         console.log('All humans here'); // this code will run
     }
-} // prints => 'All humans here'
-// Above, we use a for loop to iterate through the given array under the following conditions:
-// let i = 0 to start at the first element (index 0),
-// i < seattlePosse.length to continue while the current index is less than the length of the entire array,
-// i++ to access one element at a time
-// Looping in reverse looks a little different...
-let randomDudes = ['That guy at work', 'Chris', 'Ashton Kutcher']; // creates array
-for (let i = randomDudes.length - 1; i >= 0; i--) { // loops through array beginning at last element
-    if (randomDudes[i] === 'That guy at work') { // checks each element against condition
-        console.log('Hate that guy'); // this code will run
-    }
-} // prints => Hate that guy
-// Above, we use a for loop to iterate through an array under the following conditions:
-// let i = randomDudes.length - 1 to start at the last element,
-// i >= 0 to continue while the current index is greater than or equal to the first index (0),
-// i-- to access one element at a time
+}
 
 // 3. For-In Loop
 // For-in loops are used to access objects
@@ -67,6 +52,37 @@ for (let key in myObject) { // loops through object
 } // prints => My name is Object X
 //             My age is ageless
 //             My scrutability is inscrutable
+
+// 2 Loop Any Number of Times //
+
+let seattlePosse = ['Frasier', 'Niles', 'Martin', 'Daphne', 'Roz']; // creates array
+for (let i = 0; i < seattlePosse.length; i++) { // loops through array beginning at first element
+    if (seattlePosse[i] === 'Eddie') { // checks each element against condition
+        console.log('Good boy'); // this code will not run
+    }
+    else { 
+        console.log('All humans here'); // this code will run
+    }
+} // prints => 'All humans here'
+// Above, we used a for loop to iterate through the given array under the following conditions:
+// let i = 0 to start at the first element (index 0),
+// i < seattlePosse.length to continue while the current index is less than the length of the entire array,
+// i++ to access one element at a time
+
+// So now we've covered how to loop through an array starting at the first index
+// Looping in reverse looks a little different...
+let randomDudes = ['That guy at work', 'Chris', 'Ashton Kutcher']; // creates array
+for (let i = randomDudes.length - 1; i >= 0; i--) { // loops through array beginning at last element
+    if (randomDudes[i] === 'That guy at work') { // checks each element against condition
+        console.log('Hate that guy'); // this code will run
+    }
+} // prints => Hate that guy
+// Above, we use a for loop to iterate through an array under the following conditions:
+// let i = randomDudes.length - 1 to start at the last element,
+// i >= 0 to continue while the current index is greater than or equal to the first index (0),
+// i-- to access one element at a time
+
+
 
 
 
