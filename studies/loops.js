@@ -64,7 +64,7 @@ for (let i = 0; i < seattlePosse.length; i++) { // loops through array beginning
         console.log('All humans here'); // this code will run
     }
 } // prints => 'All humans here'
-// Above, we used a for loop to iterate through the given array under the following conditions:
+// Above, we use a for loop to iterate through the given array under the following conditions:
 // let i = 0 to start at the first element (index 0),
 // i < seattlePosse.length to continue while the current index is less than the length of the entire array,
 // i++ to access one element at a time
