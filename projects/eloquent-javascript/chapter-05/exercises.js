@@ -14,10 +14,11 @@ function flatten(array) {
 // /////////////////////////////////////////////////////////////////////////////
 
 function loop(val, test, update, body) {
-  for (let start = val; val !== test(val); update(val)) {
-    body(val);
+  if (test(val) === false) { // check if result of running value thru test func returns false
+    return; // if so, end
   }
- return val;
+  body(val); // otherwise pass value thru body function
+  return loop(update(val), test, update, body); // and return result of invoking func on updated value, test func, update func, and body func
 }
 
 // /////////////////////////////////////////////////////////////////////////////
