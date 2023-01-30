@@ -39,6 +39,10 @@ for (let i = 0; i < seattlePosse.length; i++) { // loops through array
         console.log('All humans here'); // this code will run
     }
 }
+// For loops are comprised of three statements:
+// - Start: Index at which the loop should start
+// - Stop: Condition for which the loop should stop
+// - Update: Updates the value by which the loop increments
 
 // 3. For-In Loop
 // For-in loops are used to access objects
@@ -82,7 +86,6 @@ for (let i = randomDudes.length - 1; i >= 0; i--) { // loops through array begin
 // i >= 0 to continue while the current index is greater than or equal to the first index (0),
 // i-- to access one element at a time
 
-// Loop Over an Array //
 
 
 
