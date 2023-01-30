@@ -14,7 +14,7 @@ function flatten(array) {
 // /////////////////////////////////////////////////////////////////////////////
 
 function loop(val, test, update, body) {
-  if (test(val) === false) { // check if result of running value thru test func returns false
+  if (test(val) === false) { // check if result of running value thru test function is false
     return; // if so, end
   }
   body(val); // otherwise pass value thru body function
@@ -25,8 +25,13 @@ function loop(val, test, update, body) {
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
-
+function every(array, test) {
+  for (let element of array) { // loop thru input array
+    if (!test(element)) { // if result of passing any one element thru test func evaluates to false,
+      return false; // return false
+    }
+  }
+  return true; // else return true
 }
 
 // /////////////////////////////////////////////////////////////////////////////
