@@ -13,15 +13,11 @@ function flatten(array) {
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop(value, test, update, body) {
-  for (let i = 0; i < value.length; i++) {
-    if (test(value[i]) === false) {
-      return;
-    }
-    body(value[i]);
-    update(value[i]);
-    
+function loop(val, test, update, body) {
+  for (let start = val; val !== test(val); update(val)) {
+    body(val);
   }
+ return val;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
