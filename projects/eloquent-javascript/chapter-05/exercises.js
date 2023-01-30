@@ -3,10 +3,10 @@
 // /////////////////////////////////////////////////////////////////////////////
 
 function flatten(array) {
-  let flattened = array.reduce((acc, curr) => {
-    return acc.concat(...curr);
+  let flattened = array.reduce((acc, curr) => { // create variable to hold result of reducing array
+    return acc.concat(...curr); // return result of concatenating each element to the last
   })
-  return flattened;
+  return flattened; // return flattened array
 }
 
 // /////////////////////////////////////////////////////////////////////////////
