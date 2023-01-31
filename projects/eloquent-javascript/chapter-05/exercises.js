@@ -40,17 +40,17 @@ function every(array, test) {
 // /////////////////////////////////////////////////////////////////////////////
 
 function dominantDirection(string) {
-  let ltr = [];
-  let rtl = [];
-  for (let i = 0; i < string.length; i++) {
+  let ltr = 0; // establish variables to keep track of counts
+  let rtl = 0;
+  for (let i = 0; i < string.length; i++) { // loop thru input string
     let script = characterScript(string.charCodeAt(i)); // let script = object || null
-    if (script !== null) {
-      script.direction === 'ltr' ? ltr.push(script) : rtl.push(script);
+    if (script !== null) { // if script is not null,
+      script.direction === 'ltr' ? ltr++ : rtl++; // check if value of direction prop equals ltr, if so increment ltr variable, if not increment rtl variable
     }
   }
-  if (ltr.length > rtl.length) {
-    return 'ltr';
-  } else {
+  if (ltr > rtl) { // check if value of ltr is greater than rtl
+    return 'ltr'; // if so return ltr
+  } else { // otherwise return rtl
     return 'rtl';
   }
 }
