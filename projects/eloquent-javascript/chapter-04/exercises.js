@@ -128,12 +128,12 @@ function deepEqual(x, y) {
     return false;
   }
   // iterate thru the xKeys array
-  for (let i = 0; i < xKeys.length; i++) {
-    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) {
-      return false;
+  for (let i = 0; i < xKeys.length; i++) { 
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) { // if keys don't match or if values don't match,
+      return false; // return false
     }
   }
-  return true;
+  return true; // otherwise return true
 }
 
 ////////////////////////////////////////////////////////////////////////////////
