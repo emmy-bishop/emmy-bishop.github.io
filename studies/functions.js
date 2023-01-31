@@ -16,9 +16,12 @@
  * 4: Functions Assigned to Variables: Functions are allowed to be nameless when assigned to variables.
  * To invoke a function assigned to a variable, we refer to the name of the variable.
  * 
- * 5: Specifying Inputs and Outputs:
+ * 5: Specifying Inputs and Outputs: Functions often take inputs, but do not necessarily need to do so.
+ * The same is true for outputs--some functions perform a task without producing any output.
  * 
- * 6: Scope:
+ * 6: Scope: Functions can see and modify variables within the global or parent scope.
+ * The reverse is not true.
  * 
- * 7: Closures:
+ * 7: Closures: A closure is when a function retains access to a variable or variables declared within a parent function.
  */
+
