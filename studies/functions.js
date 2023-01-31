@@ -25,3 +25,38 @@
  * 7: Closures: A closure is when a function retains access to a variable or variables declared within a parent function.
  */
 
+// 1 Declaration vs. Invocation //
+
+// 1. Declaration
+// When a function is declared, it must have a name
+// It can also accept one or more parameters, if needed
+// These parameters represent the input that will be passed in as part of future function calls
+function hmmmm(dinnerIdea) { // declares function named hmmmm, which takes in a parameter of dinnerIdea
+    console.log(`Ehhhhh, not sure I'm feeling ${dinnerIdea} tonight`);
+}
+
+// 2. Invocation
+// To call upon our function, we refer to its name and pass in an argument
+// The argument is the actual value with which the function will work
+hmmmm('Italian'); // prints => Ehhhhh, not sure I'm feeling Italian tonight
+
+// 4 Functions Assigned to Variables //
+
+// Functions can be nameless when assigned to a named variable
+// A function defined in this manner is referred to as anonymous
+const nonsenseWords = function() { // assigns value of anonymous function to nonsenseWords variable
+    return 'scooooooby dooby doo';
+}
+// To call an anonymous function, we refer to the name of the variable in which it is housed
+console.log(nonsenseWords); // prints => scooooooby dooby doo
+
+
+
+
+
+
+
+
+
+
+
