@@ -28,17 +28,30 @@
 // 1 Declaration vs. Invocation //
 
 // 1. Declaration
-// When a function is declared, it must have a name
-// It can also accept one or more parameters, if needed
-// These parameters represent the input that will be passed in as part of future function calls
-function hmmmm(dinnerIdea) { // declares function named hmmmm, which takes in a parameter of dinnerIdea
+function hmmmm(dinnerIdea) { // declares function
     console.log(`Ehhhhh, not sure I'm feeling ${dinnerIdea} tonight`);
 }
 
 // 2. Invocation
 // To call upon our function, we refer to its name and pass in an argument
-// The argument is the actual value with which the function will work
 hmmmm('Italian'); // prints => Ehhhhh, not sure I'm feeling Italian tonight
+
+// 2 Parameters vs Arguments //
+
+// Functions can accept one or more parameters, if needed
+// These parameters represent the input that will be passed in as part of future function calls
+function hmmmm(dinnerIdea) { // declares function named hmmmm, which takes in a parameter of dinnerIdea
+    console.log(`Ehhhhh, not sure I'm feeling ${dinnerIdea} tonight`);
+}
+hmmmm('Italian'); // here we pass in the value of Italian as our argument
+// The argument is the actual value with which the function will work
+
+// 3 Named Function Syntax //
+
+// When a function is declared outside a variable, it must have a name
+function hmmmm(dinnerIdea) { // declares function named hmmmm
+    console.log(`Ehhhhh, not sure I'm feeling ${dinnerIdea} tonight`);
+}
 
 // 4 Functions Assigned to Variables //
 
@@ -49,6 +62,31 @@ const nonsenseWords = function() { // assigns value of anonymous function to non
 }
 // To call an anonymous function, we refer to the name of the variable in which it is housed
 console.log(nonsenseWords); // prints => scooooooby dooby doo
+
+// 5 Specifying Inputs and Outputs //
+
+// When functions take inputs, we specify those inputs with parameters
+function sum(num1, num2) { // declares function called sum, which takes in parameters representing two numbers
+    return num1 + num2;
+}
+console.log(sum(5 + 6)); // prints => 11
+// Functions can also output different types of results
+// For example, a function can output an array
+function arrayCreator(a, b, c) {
+    return [a, b, c];
+}
+console.log(arrayCreator('yo', 'what', 'up')); // prints => ['yo', 'what', 'up']
+// Sometimes functions perform a task without producing any output
+let realObj = {
+    this: 'is',
+    totally: 'a',
+    realworld: 'example'
+};
+function changeObj(object) { // declares function
+    object.totally = 'not a'; // overwrites value of object property
+} // nothing is returned--this function exists only to edit a value
+changeObj(realObj); // invokes function
+console.log(realObj); // prints => { this: 'is', totally: 'not a', realworld: 'example' }
 
 
 
