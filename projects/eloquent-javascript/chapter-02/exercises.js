@@ -33,17 +33,18 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard(input) {
-  let board = [];
-  for (let i = 0; i < input; i++) {
-    let row = '';
-    for (let j = 0; j < input; j++) {
-      if ((i + j) % 2 === 0) {
-        row += ' ';
-      } else {
-        row += '#';                               
+  let board = ''; // establish empty string to hold board
+  for (let i = 0; i < input; i++) { // loop to create rows
+    for (let j = 0; j < input; j++) { // loop to create columns
+      if ((i + j) % 2 === 0) { // check if sum of current indexes is even
+        board += ' '; // if so add space to board
+      } else { // if sum is odd,
+        board += '#'; // add # to board                            
       }
-    } board.push(row);
-  } console.log(board.join('\n'));
+    }
+    board += '\n'; // at end of each row, add new line
+  } 
+  console.log(board);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
