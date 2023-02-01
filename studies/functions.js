@@ -88,6 +88,31 @@ function changeObj(object) { // declares function
 changeObj(realObj); // invokes function
 console.log(realObj); // prints => { this: 'is', totally: 'not a', realworld: 'example' }
 
+// 6 Scope //
+
+// Functions can see and modify variables in the global scope
+var imGlobal = 'omg yayyy im global as heck'; // declares global variable
+function noWay() {
+    imGlobal = 'wait no please dont change meeee--'; // reassigns variable
+}
+noWay(); // invokes function
+console.log(imGlobal); // prints => wait no please dont change meeee--
+
+// 7 Closure //
+
+// Functions can also see and modify variables in their parent scope
+function hmph(string) { // declares function that takes in a string value
+    var huh = string; // sets value of local variable to value of input string
+     return function() { // anonymous function
+       huh += ' no way!'; // adds to local variable
+       return huh; // returns final version of variable
+      }
+  }
+  let whoa = hmph('what?'); // passes an argument to outer function hmph
+  console.log(whoa()); // prints => what? no way!
+
+
+
 
 
 
