@@ -165,7 +165,8 @@ module.exports.unique = unique;
 
 
 /**
- * filter: Designed to return all elements for which a function call returned a true result
+ * filter: Designed to loop over an array and pass each value to a test function.
+ * If the result of the test function is true, filter pushes the value to a new array and returns that array.
  * 
  * @param { Array } collection: Function takes in an array over which to iterate
  * @param { Function } action: Function takes in a function to be applied to each value in the collection
@@ -173,19 +174,20 @@ module.exports.unique = unique;
  */
 
 function filter(array, func) {
-    let trueValues = []; // create holder array
-    for (let i = 0; i < array.length; i++) { // loop thru input array
-        if (func(array[i], i, array)) { // check if test function call resolves to true
-            trueValues.push(array[i]); // if so, push value into holder array
+    let trueValues = [];
+    for (let i = 0; i < array.length; i++) {
+        if (func(array[i], i, array)) {
+            trueValues.push(array[i]);
         };
     }
-    return trueValues; // return holder array
+    return trueValues;
 }
 module.exports.filter = filter;
 
 
 /**
- * reject: Designed to return all elements for which function call returned a false result
+ * reject: Designed to loop over an array and pass each value to a test function.
+ * If the result of the test function is false, reject pushes the value to a new array and returns that array.
  * 
  * @param { Array } collection: Function takes in an array over which to iterate
  * @param { Function } action: Function takes in a function to be applied to each value in the array
@@ -247,7 +249,7 @@ function map(collection, func) {
 module.exports.map = map;
 
 /**
- * pluck: Designed to return an array containing the value of the given property for every element in the array
+ * pluck: Designed to return an array containing the value of the given property for every object in an array of objects.
  * 
  * @param { Array } collection: Function takes in an array of objects over which to iterate
  * @param { Property }: Function takes in an object property
@@ -263,7 +265,9 @@ function pluck(array, prop) {
 module.exports.pluck = pluck;
 
 /**
- * every: Designed to check each element of a collection and return a result of true if each value is truthy. If any elements are falsy, returns false.
+ * every: Designed to run each element of a collection through a callback function. 
+ * Returns a result of true if each element passes the test. 
+ * If any element returns a falsy result, returns false.
  * 
  * @param { Array or Object } collection: Function takes in an array or an object over which to iterate
  * @param { Function } action: Function takes in a function to be applied to each value in the collection
@@ -297,7 +301,9 @@ _.every = function(collection, func) {
 module.exports.every = every;
 
 /**
- * some: Designed to check each element of a collection and return a result of true if at least one element is truthy. Otherwise, returns false.
+ * some: Designed to run each element of a collection through a callback function. 
+ * Returns a result of true if any element passes the test. 
+ * If every element returns a falsy result, returns false.
  * 
  * @param { Array or Object } collection: Function takes in an array or an object over which to iterate
  * @param { Function } action: Function takes in a function to be applied to each value in the collection
@@ -350,7 +356,8 @@ module.exports.extend = extend;
 
 
 /**
- * reduce: Designed to 
+ * reduce: Designed to iterate over an array and invoke a callback function on every element of the array.
+ * Accumulates elements into a single value and returns that value.
  * 
  * @param { Array } collection: Function takes in an array over which to iterate
  * @param { Function } action: Function takes in a function to be applied to each value in the collection
